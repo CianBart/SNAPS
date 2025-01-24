@@ -240,7 +240,7 @@ class NAPS_assigner:
         preds.index = preds["Res_name"]
         preds.index.name = None
         self.neighbour_df = preds[["Res_name_m1","Res_name_p1"]]
-        #self.Res_name_m1.loc[preds["Res_type_m1"]=="P"] = np.NaN
+        #self.Res_name_m1.loc[preds["Res_type_m1"]=="P"] = np.nan
         
         # Restrict atom types
         # self.pars["atom_set"] is the set of atoms to be used in the analysis
@@ -260,25 +260,25 @@ class NAPS_assigner:
         M = len(preds.index)
         
         if N>M:     # If there are more spin systems than predictions
-            dummies = pd.DataFrame(np.NaN, columns = preds.columns, 
+            dummies = pd.DataFrame(np.nan, columns = preds.columns, 
                         index=["DR_"+str(i) for i in 1+np.arange(N-M)])
             dummies["Res_name"] = dummies.index
             dummies["Dummy_res"] = True
             preds = preds.append(dummies)        
         elif M>N:
-            dummies = pd.DataFrame(np.NaN, columns = obs.columns, 
+            dummies = pd.DataFrame(np.nan, columns = obs.columns, 
                         index=["DSS_"+str(i) for i in 1+np.arange(M-N)])
             dummies["SS_name"] = dummies.index
             dummies["Dummy_SS"] = True
             obs = obs.append(dummies)
-            #obs.loc[["dummy_"+str(i) for i in 1+np.arange(M-N)]] = np.NaN
+            #obs.loc[["dummy_"+str(i) for i in 1+np.arange(M-N)]] = np.nan
             #obs.loc[obs.index[N:M], "SS_name"] = ["dummy_"+str(i) for i in 1+np.arange(M-N)]
         
         # Set missing Res_name_m1 entries to NaN
         self.neighbour_df.loc[~self.neighbour_df["Res_name_m1"].isin(preds["Res_name"]), 
-                          "Res_name_m1"] = np.NaN
+                          "Res_name_m1"] = np.nan
         self.neighbour_df.loc[~self.neighbour_df["Res_name_p1"].isin(preds["Res_name"]), 
-                          "Res_name_p1"] = np.NaN
+                          "Res_name_p1"] = np.nan
         
         self.obs = obs.copy()
         self.preds = preds.copy()
@@ -396,7 +396,7 @@ class NAPS_assigner:
         preds = self.preds
         
         # Initialise matrix as NaN
-        log_prob_matrix = pd.DataFrame(np.NaN, index=obs.index, 
+        log_prob_matrix = pd.DataFrame(np.nan, index=obs.index, 
                                        columns=preds.index)    
         
         for i in preds.index:
@@ -889,8 +889,8 @@ class NAPS_assigner:
     
         if seq_atoms.size==0:
             # You can't do a comparison
-            assign_df["Max_mismatch_m1"] = np.NaN
-            assign_df["Max_mismatch_p1"] = np.NaN
+            assign_df["Max_mismatch_m1"] = np.nan
+            assign_df["Max_mismatch_p1"] = np.nan
             assign_df["Num_good_links_m1"] = 0
             assign_df["Num_good_links_p1"] = 0
             assign_df["Confidence"] = "Undefined"
@@ -1389,7 +1389,7 @@ class NAPS_assigner:
                 # Introduce NaN's to break the line into discontinuous segments
                 # "_z" in name is to ensure it sorts after the atom+"_m1" shifts
                 # eg. CA, CA_m1, CA_z
-                vlines[atom+"_z"] = np.NaN  
+                vlines[atom+"_z"] = np.nan  
                 # Convert from wide to long
                 vlines = vlines.melt(id_vars=["Res_name"], 
                                      value_vars=[atom, atom+"_m1", atom+"_z"], 
@@ -1405,7 +1405,7 @@ class NAPS_assigner:
                 # Introduce NaN's to break the line into discontinuous segments
                 # "_a" in name ensures it sorts between the atom and atom+"_m1" shifts
                 # eg. CA, CA_a, CA_m1
-                hlines[atom+"_a"] = np.NaN  
+                hlines[atom+"_a"] = np.nan  
                 # Add extra lines for missing residues
 #                tmp = list(range(hlines["Res_N"].min(), hlines["Res_N"].max()))
 #                tmp2 = pd.DataFrame({"Res_N":tmp})

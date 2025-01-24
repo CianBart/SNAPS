@@ -112,7 +112,7 @@ while max_consistent>last_consistent:
     
     alt_assigns = pd.DataFrame({"SS_name":inconsistent["SS_name"],
                                 "Res_name":inconsistent["Res_name"],
-                                "Sum_prob":np.NaN, "Total_consistent":np.NaN}, 
+                                "Sum_prob":np.nan, "Total_consistent":np.nan}, 
                                 index=inconsistent.index)
     matching_dict={}
     
