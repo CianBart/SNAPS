@@ -1,0 +1,216 @@
+data_bmr25807
+
+save_nef_nmr_meta_data
+   _nef_nmr_meta_data.sf_category      nef_nmr_meta_data
+   _nef_nmr_meta_data.sf_framecode     nef_nmr_meta_data
+   _nef_nmr_meta_data.format_name      nmr_exchange_format
+   _nef_nmr_meta_data.format_version   1.1
+   _nef_nmr_meta_data.program_name     NEFPipelines
+   _nef_nmr_meta_data.script_name      nmrstar/import/project.py
+   _nef_nmr_meta_data.program_version  0.1.94
+   _nef_nmr_meta_data.creation_date    2025-01-27T15:26:33.933898
+   _nef_nmr_meta_data.uuid             NEFPipelines-2025-01-27T15:26:33.933898-6731987350
+
+   loop_
+      _nef_run_history.run_number
+      _nef_run_history.program_name
+      _nef_run_history.program_version
+      _nef_run_history.script_name
+
+     1   NEFPipelines   0.1.94   nmrstar/import/project.py    
+
+   stop_
+
+save_
+
+save_nef_molecular_system
+   _nef_molecular_system.sf_category   nef_molecular_system
+   _nef_molecular_system.sf_framecode  nef_molecular_system
+
+   loop_
+      _nef_sequence.index
+      _nef_sequence.chain_code
+      _nef_sequence.sequence_code
+      _nef_sequence.residue_name
+      _nef_sequence.linking
+      _nef_sequence.residue_variant
+      _nef_sequence.cis_peptide
+
+     1   A   22   ASP   middle   .   .    
+     2   A   23   ALA   middle   .   .    
+     3   A   24   GLU   middle   .   .    
+     4   A   25   THR   middle   .   .    
+
+   stop_
+
+save_
+
+save_nef_chemical_shift_list_default
+   _nef_chemical_shift_list.sf_category   nef_chemical_shift_list
+   _nef_chemical_shift_list.sf_framecode  nef_chemical_shift_list_default
+
+   loop_
+      _nef_chemical_shift.chain_code
+      _nef_chemical_shift.sequence_code
+      _nef_chemical_shift.residue_name
+      _nef_chemical_shift.atom_name
+      _nef_chemical_shift.value
+      _nef_chemical_shift.value_uncertainty
+      _nef_chemical_shift.element
+      _nef_chemical_shift.isotope_number
+
+     A   22   ASP   C      174.798   0.1    C   13    
+     A   22   ASP   CA     52.514    0.1    C   13    
+     A   22   ASP   CB     42.38     0.02   C   13    
+     A   22   ASP   H      7.373     0.01   H   1     
+     A   22   ASP   HA     4.754     0.01   H   1     
+     A   22   ASP   HBx    2.956     0.01   H   1     
+     A   22   ASP   HBy    3.117     0.01   H   1     
+     A   22   ASP   N      115.403   0.1    N   15    
+     A   23   ALA   C      179.383   0.1    C   13    
+     A   23   ALA   CA     54.559    0.1    C   13    
+     A   23   ALA   CB     17.61     0.02   C   13    
+     A   23   ALA   H      8.393     0.01   H   1     
+     A   23   ALA   HA     3.374     0.01   H   1     
+     A   23   ALA   HB%    1.208     0.01   H   1     
+     A   23   ALA   N      121.205   0.1    N   15    
+     A   24   GLU   C      179.303   0.1    C   13    
+     A   24   GLU   CA     66.844    0.1    C   13    
+     A   24   GLU   CB     29.05     0.02   C   13    
+     A   24   GLU   H      8.487     0.01   H   1     
+     A   24   GLU   HA     3.886     0.01   H   1     
+     A   24   GLU   HBx    1.827     0.01   H   1     
+     A   24   GLU   HBy    2.003     0.01   H   1     
+     A   24   GLU   N      119.144   0.1    N   15    
+     A   25   THR   C      177.049   0.1    C   13    
+     A   25   THR   CA     66.844    0.1    C   13    
+     A   25   THR   CB     67.89     0.02   C   13    
+     A   25   THR   CG2    21.194    0.1    C   13    
+     A   25   THR   H      8.409     0.01   H   1     
+     A   25   THR   HA     3.705     0.01   H   1     
+     A   25   THR   HB     4.027     0.01   H   1     
+     A   25   THR   HG2%   1.256     0.01   H   1     
+     A   25   THR   N      117.485   0.1    N   15    
+
+   stop_
+
+save_
+
+save_nef_chemical_shift_list_preds
+   _nef_chemical_shift_list.sf_category   nef_chemical_shift_list
+   _nef_chemical_shift_list.sf_framecode  nef_chemical_shift_list_preds
+
+   loop_
+      _nef_chemical_shift.chain_code
+      _nef_chemical_shift.sequence_code
+      _nef_chemical_shift.residue_name
+      _nef_chemical_shift.atom_name
+      _nef_chemical_shift.value
+      _nef_chemical_shift.value_uncertainty
+      _nef_chemical_shift.element
+      _nef_chemical_shift.isotope_number
+
+     A   22   ASP   C     174.913   .   .   .    
+     A   22   ASP   CA    52.42     .   .   .    
+     A   22   ASP   CB    42.47     .   .   .    
+     A   22   ASP   CG    179.91    .   .   .    
+     A   22   ASP   H     7.41      .   .   .    
+     A   22   ASP   HA    4.82      .   .   .    
+     A   22   ASP   HB2   2.938     .   .   .    
+     A   22   ASP   HB3   3.046     .   .   .    
+     A   22   ASP   N     115.11    .   .   .    
+     A   23   ALA   C     179.23    .   .   .    
+     A   23   ALA   CA    54.59     .   .   .    
+     A   23   ALA   CB    18.06     .   .   .    
+     A   23   ALA   H     8.519     .   .   .    
+     A   23   ALA   HA    3.37      .   .   .    
+     A   23   ALA   HB    1.23      .   .   .    
+     A   23   ALA   HB2   1.789     .   .   .    
+     A   23   ALA   HB3   1.583     .   .   .    
+     A   23   ALA   N     121.56    .   .   .    
+     A   24   GLU   C     178.6     .   .   .    
+     A   24   GLU   CA    59.21     .   .   .    
+     A   24   GLU   CB    29.1      .   .   .    
+     A   24   GLU   CD    183.32    .   .   .    
+     A   24   GLU   CG    36.596    .   .   .    
+     A   24   GLU   H     8.52      .   .   .    
+     A   24   GLU   HA    3.961     .   .   .    
+     A   24   GLU   HB2   1.934     .   .   .    
+     A   24   GLU   HB3   2.003     .   .   .    
+     A   24   GLU   HG2   2.268     .   .   .    
+     A   24   GLU   HG3   2.164     .   .   .    
+     A   24   GLU   N     119.36    .   .   .    
+     A   25   THR   C     176.54    .   .   .    
+     A   25   THR   CA    67.04     .   .   .    
+     A   25   THR   CB    68.01     .   .   .    
+     A   25   THR   CG2   22.255    .   .   .    
+     A   25   THR   H     8.35      .   .   .    
+     A   25   THR   HA    3.76      .   .   .    
+     A   25   THR   HB    4.06      .   .   .    
+     A   25   THR   HG2   1.026     .   .   .    
+     A   25   THR   N     117.49    .   .   .    
+
+   stop_
+
+save_
+
+save_nef_rdc_restraint_list_NH_preds
+   _nef_rdc_restraint_list.sf_category     nef_rdc_restraint_list
+   _nef_rdc_restraint_list.sf_framecode    nef_rdc_restraint_list_NH_preds
+   _nef_rdc_restraint_list.potential_type  .
+
+   loop_
+      _nef_rdc_restraint.index
+      _nef_rdc_restraint.restraint_id
+      _nef_rdc_restraint.restraint_combination_id
+      _nef_rdc_restraint.chain_code_1
+      _nef_rdc_restraint.sequence_code_1
+      _nef_rdc_restraint.residue_name_1
+      _nef_rdc_restraint.atom_name_1
+      _nef_rdc_restraint.chain_code_2
+      _nef_rdc_restraint.sequence_code_2
+      _nef_rdc_restraint.residue_name_2
+      _nef_rdc_restraint.atom_name_2
+      _nef_rdc_restraint.weight
+      _nef_rdc_restraint.target_value
+      _nef_rdc_restraint.target_value_uncertainty
+
+     1   22   .   A   22   ASP   H   A   22   ASP   N   1.0   -5.9812    1.0    
+     2   23   .   A   23   ALA   H   A   23   ALA   N   1.0   -0.0327    1.0    
+     3   24   .   A   24   GLU   H   A   24   GLU   N   1.0   -15.0215   1.0    
+     4   25   .   A   25   THR   H   A   25   THR   N   1.0   -13.721    1.0    
+
+   stop_
+
+save_
+
+save_nef_rdc_restraint_list_NH_measured
+   _nef_rdc_restraint_list.sf_category     nef_rdc_restraint_list
+   _nef_rdc_restraint_list.sf_framecode    nef_rdc_restraint_list_NH_measured
+   _nef_rdc_restraint_list.potential_type  .
+
+   loop_
+      _nef_rdc_restraint.index
+      _nef_rdc_restraint.restraint_id
+      _nef_rdc_restraint.restraint_combination_id
+      _nef_rdc_restraint.chain_code_1
+      _nef_rdc_restraint.sequence_code_1
+      _nef_rdc_restraint.residue_name_1
+      _nef_rdc_restraint.atom_name_1
+      _nef_rdc_restraint.chain_code_2
+      _nef_rdc_restraint.sequence_code_2
+      _nef_rdc_restraint.residue_name_2
+      _nef_rdc_restraint.atom_name_2
+      _nef_rdc_restraint.weight
+      _nef_rdc_restraint.target_value
+      _nef_rdc_restraint.target_value_uncertainty
+
+     1   22   .   A   22   ASP   H   A   @122   ASP   N   1.0   -4.294    .    
+     2   23   .   A   23   ALA   H   A   @123   ALA   N   1.0   -2.326    .    
+     3   24   .   A   24   GLU   H   A   @124   GLU   N   1.0   -13.433   .    
+     4   25   .   A   25   THR   H   A   @125   THR   N   1.0   -10.596   .    
+
+   stop_
+
+save_
+

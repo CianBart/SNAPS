@@ -1,0 +1,28 @@
+save_nefpls_assignments_snaps
+   _nefpls_assignments.category  nefpls_assignments_snaps
+
+   loop_
+      _nefpls_assignments.index
+      _nefpls_assignments.chain_code
+      _nefpls_assignments.sequence_code
+      _nefpls_assignments.residue_name
+      _nefpls_assignments.unassigned_sequence_code
+      _nefpls_assignments.assigned
+      _nefpls_assignments.merit
+
+     1    A   22   ASP   22   True   1.000    
+     2    A   23   ALA   23   True   1.000    
+     3    A   24   GLU   24   True   1.000    
+     4    A   25   THR   25   True   1.000    
+     5    A   26   ALA   26   True   1.000    
+     6    A   27   GLU   27   True   1.000    
+     7    A   28   LYS   28   True   1.000    
+     8    A   29   ALA   29   True   1.000    
+     9    A   30   PHE   30   True   1.000    
+     10   A   31   LYS   31   True   1.000    
+     11   A   32   GLN   32   True   1.000    
+
+   stop_
+
+save_
+

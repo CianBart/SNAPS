@@ -1,18 +1,17 @@
-11:21:47 INFO All required parameters imported
-11:21:47 INFO Finished reading in config parameters from config/config_yaml.txt
-11:21:47 INFO Finished reading in 78 spin systems from data/P3a_L273R/ccpn_resonances.txt
-11:21:47 INFO Imported 453 predicted chemical shifts from data/P3a_L273R/shiftx2.cs
-11:21:47 INFO 1 residues from the sequence were missing from the predictions
-11:21:47 INFO Finished reading in 78 predicted residues from data/P3a_L273R/shiftx2.cs
-11:21:47 INFO Removing 2 prolines from predictions
-11:21:47 INFO Restricted atom types to CA,H,CB,N,HA,C
-11:21:47 INFO Added 2 dummy predicted residues
-11:21:47 INFO Imported delta_correlation info from config/d_mean.csv and config/d_cov.csv
-11:21:47 INFO Accounting for correlated prediction errors
-11:21:47 INFO Calculated log probability matrix (78x78)
-11:21:47 WARNING No sequential links in data - mismatch matrix not calculated.
-11:21:47 INFO Started linear assignment
-11:21:47 INFO Finished calculating best assignment based on predictions
-11:21:47 WARNING Couldn't calculate assignment confidence: need sequential atom information
-11:21:47 INFO Finished writing results to data/test_P3a_L273_ccpn.out
-11:21:47 INFO Finished writing strip plot to data/ccpn_strips.html
+15:27:34 INFO All required parameters imported
+15:27:34 INFO Finished reading in config parameters from ../config/config_yaml.txt
+15:27:34 INFO Finished reading in 78 spin systems from ../data/P3a_L273R/ccpn_resonances.txt
+15:27:34 INFO Imported 453 predicted chemical shifts from ../data/P3a_L273R/shiftx2.cs
+15:27:34 INFO 1 residues from the sequence were missing from the predictions
+15:27:34 INFO Finished reading in 78 predicted residues from ../data/P3a_L273R/shiftx2.cs
+15:27:34 INFO Removing 2 prolines from predictions
+15:27:34 INFO Restricted atom types to HA,H,CB,C,N,CA
+15:27:34 INFO Added 3 dummy predicted residues
+15:27:34 INFO Imported delta_correlation info from ../config/d_mean.csv and ../config/d_cov.csv
+15:27:34 INFO Accounting for correlated prediction errors
+15:27:34 INFO Calculated log probability matrix (78x78)
+15:27:34 WARNING No sequential links in data - mismatch matrix not calculated.
+15:27:34 INFO Started linear assignment
+15:27:34 INFO Finished calculating best assignment based on predictions
+15:27:34 WARNING Couldn't calculate assignment confidence: need sequential atom information
+15:27:34 INFO Finished writing results to ../data/P3a_L273R/test_P3a_L273_ccpn.out

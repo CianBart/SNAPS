@@ -19,8 +19,10 @@ from SNAPS_importer import SNAPS_importer
 from SNAPS_assigner import SNAPS_assigner
 
 # TODO remove these from NEF importer
-from NEF_reader import _split_path_and_frame, TRANSLATIONS_1_3_PROTEIN
+from lib.NEF_reader import _split_path_and_frame, TRANSLATIONS_1_3_PROTEIN
 import logging
+
+from lib.rdcs_lib import build_log_probability_from_entry, get_nef_entry
 
 
 def _get_arguments(system_args):
@@ -37,6 +39,8 @@ def _get_arguments(system_args):
                         help="A table of predicted chemical shifts for nef can just be a dataframe name [default predicted].")
     parser.add_argument("output_file",
                         help="The file results will be written to.")
+
+    parser.add_argument("rdc_file",default=None, help="RDC data file" )
 
     # Information on input files and configuration options
     parser.add_argument("--shift_type",
@@ -97,6 +101,9 @@ def _get_arguments(system_args):
     parser.add_argument("--hsqc_plot_file",
                         default=None,
                         help="A filename for an output HSQC plot.")
+
+
+    parser.add_argument("--rdc_type", choices= ["nef","snaps"], help=" type of RDC data.", default="nef")
 
     args = parser.parse_args(system_args)
 
@@ -166,11 +173,9 @@ def run_snaps(system_args):
     # import predicted shifts
     #TODO move this to importer
     if args.pred_type == "nef":
-        if not Path(args.pred_file).exists():
-            file_name, shift_list_name = _split_path_and_frame(args.shift_file)
-            pred_file = f"{file_name}:{args.pred_file}"
-
-            assigner.import_pred_shifts(pred_file, args.pred_type, args.pred_chain, args.pred_seq_offset)
+        file_name, pred_shift_list_name = _split_path_and_frame(args.pred_file, 'pred')
+        if Path(file_name).exists():
+            assigner.import_pred_shifts(args.pred_file, args.pred_type, args.pred_chain, args.pred_seq_offset)
 
 
     else:
@@ -179,21 +184,30 @@ def run_snaps(system_args):
     #### import aa type restraints
     _import_aa_type_info(args, assigner, importer)
 
-    #### Do the analysis
+    rdc_dataframe=_import_rdc_data(args, assigner, importer)
+
+
+    ### Do the analysis
     assigner.prepare_obs_preds()
-    assigner.calc_log_prob_matrix()
-    assigner.calc_mismatch_matrix()
 
-    if assigner.pars["iterate_until_consistent"]:
-        assigner.assign_df = assigner.find_consistent_assignments(set_assign_df=True)
-    else:
-        assigner.assign_from_preds(set_assign_df=True)
-        # breakpoint()
-        assigner.add_consistency_info(threshold=assigner.pars["seq_link_threshold"])
-        # breakpoint()
+    snaps_dataframe=assigner.calc_log_prob_matrix()
 
-    #### Output the results
-    _output_results(args, assigner, logger)
+    # print( snaps_dataframe)
+    # print(rdc_dataframe)
+    assigner.combine_penalty_tables(rdc_dataframe, snaps_dataframe)
+
+    # assigner.calc_mismatch_matrix()
+    #
+    # if assigner.pars["iterate_until_consistent"]:
+    #     assigner.assign_df = assigner.find_consistent_assignments(set_assign_df=True)
+    # else:
+    #     assigner.assign_from_preds(set_assign_df=True)
+    #     # breakpoint()
+    #     assigner.add_consistency_info(threshold=assigner.pars["seq_link_threshold"])
+    #     # breakpoint()
+    #
+    # #### Output the results
+    # _output_results(args, assigner, logger)
 
     #### Make some plots
     plots = _output_plots(args, assigner, logger)
@@ -384,6 +398,30 @@ def _import_aa_type_info(args, assigner, importer):
             sys.exit(1)
     else:
         assigner.pars["use_ss_class_info"] = False
+
+def _import_rdc_data(args, assigner, importer):
+
+    if args.rdc_file:
+
+
+
+        if args.rdc_type == "nef" :
+
+            print('rdc')
+            file_name=args.rdc_file
+            magnitude_matrix=importer.import_rdc_data(file_name)
+
+
+            log_probability=assigner.calc_rdc_log_prob_matrix(magnitude_matrix)
+            return log_probability
+            # ask why import aa info uses args[0] because it breaks my code
+
+
+        else:
+            print('wrong file format ')
+
+    else:
+        print('no rdc file provided')
 
 
 def _setup_logger(args):

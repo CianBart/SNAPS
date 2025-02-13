@@ -1,0 +1,353 @@
+data_bmr25807
+
+save_nef_nmr_meta_data
+   _nef_nmr_meta_data.sf_category      nef_nmr_meta_data
+   _nef_nmr_meta_data.sf_framecode     nef_nmr_meta_data
+   _nef_nmr_meta_data.format_name      nmr_exchange_format
+   _nef_nmr_meta_data.format_version   1.1
+   _nef_nmr_meta_data.program_name     NEFPipelines
+   _nef_nmr_meta_data.script_name      nmrstar/import/project.py
+   _nef_nmr_meta_data.program_version  0.1.94
+   _nef_nmr_meta_data.creation_date    2025-01-27T15:26:33.933898
+   _nef_nmr_meta_data.uuid             NEFPipelines-2025-01-27T15:26:33.933898-6731987350
+
+   loop_
+      _nef_run_history.run_number
+      _nef_run_history.program_name
+      _nef_run_history.program_version
+      _nef_run_history.script_name
+
+     1   NEFPipelines   0.1.94   nmrstar/import/project.py
+
+   stop_
+
+save_
+
+save_nef_molecular_system
+   _nef_molecular_system.sf_category   nef_molecular_system
+   _nef_molecular_system.sf_framecode  nef_molecular_system
+
+   loop_
+      _nef_sequence.index
+      _nef_sequence.chain_code
+      _nef_sequence.sequence_code
+      _nef_sequence.residue_name
+      _nef_sequence.linking
+      _nef_sequence.residue_variant
+      _nef_sequence.cis_peptide
+
+     1    A   22   ASP   middle   .   .
+     2    A   23   ALA   middle   .   .
+     3    A   24   GLU   middle   .   .
+     4    A   25   THR   middle   .   .
+     5    A   26   ALA   middle   .   .
+     6    A   27   GLU   middle   .   .
+     7    A   28   LYS   middle   .   .
+     8    A   29   ALA   middle   .   .
+     9    A   30   PHE   middle   .   .
+     10   A   31   LYS   middle   .   .
+     11   A   32   GLN   middle   .   .
+
+   stop_
+
+save_
+
+save_nef_chemical_shift_list_default
+   _nef_chemical_shift_list.sf_category   nef_chemical_shift_list
+   _nef_chemical_shift_list.sf_framecode  nef_chemical_shift_list_default
+
+   loop_
+      _nef_chemical_shift.chain_code
+      _nef_chemical_shift.sequence_code
+      _nef_chemical_shift.residue_name
+      _nef_chemical_shift.atom_name
+      _nef_chemical_shift.value
+      _nef_chemical_shift.value_uncertainty
+      _nef_chemical_shift.element
+      _nef_chemical_shift.isotope_number
+
+     A   22   ASP   C      174.798   0.1    C   13
+     A   22   ASP   CA     52.514    0.1    C   13
+     A   22   ASP   CB     42.38     0.02   C   13
+     A   22   ASP   H      7.373     0.01   H   1
+     A   22   ASP   HA     4.754     0.01   H   1
+     A   22   ASP   HBx    2.956     0.01   H   1
+     A   22   ASP   HBy    3.117     0.01   H   1
+     A   22   ASP   N      115.403   0.1    N   15
+     A   23   ALA   C      179.383   0.1    C   13
+     A   23   ALA   CA     54.559    0.1    C   13
+     A   23   ALA   CB     17.61     0.02   C   13
+     A   23   ALA   H      8.393     0.01   H   1
+     A   23   ALA   HA     3.374     0.01   H   1
+     A   23   ALA   HB%    1.208     0.01   H   1
+     A   23   ALA   N      121.205   0.1    N   15
+     A   24   GLU   C      179.303   0.1    C   13
+     A   24   GLU   CA     66.844    0.1    C   13
+     A   24   GLU   CB     29.05     0.02   C   13
+     A   24   GLU   H      8.487     0.01   H   1
+     A   24   GLU   HA     3.886     0.01   H   1
+     A   24   GLU   HBx    1.827     0.01   H   1
+     A   24   GLU   HBy    2.003     0.01   H   1
+     A   24   GLU   N      119.144   0.1    N   15
+     A   25   THR   C      177.049   0.1    C   13
+     A   25   THR   CA     66.844    0.1    C   13
+     A   25   THR   CB     67.89     0.02   C   13
+     A   25   THR   CG2    21.194    0.1    C   13
+     A   25   THR   H      8.409     0.01   H   1
+     A   25   THR   HA     3.705     0.01   H   1
+     A   25   THR   HB     4.027     0.01   H   1
+     A   25   THR   HG2%   1.256     0.01   H   1
+     A   25   THR   N      117.485   0.1    N   15
+     A   26   ALA   C      177.059   0.1    C   13
+     A   26   ALA   CA     54.744    0.1    C   13
+     A   26   ALA   CB     17.55     0.02   C   13
+     A   26   ALA   H      7.297     0.01   H   1
+     A   26   ALA   HA     3.224     0.01   H   1
+     A   26   ALA   HB%    0.52      0.01   H   1
+     A   26   ALA   N      125.393   0.1    N   15
+     A   28   LYS   C      179.602   0.1    C   13
+     A   28   LYS   CA     59.594    0.1    C   13
+     A   28   LYS   CB     32.41     0.02   C   13
+     A   28   LYS   H      7.222     0.01   H   1
+     A   28   LYS   HA     3.697     0.01   H   1
+     A   28   LYS   HB%    1.771     0.01   H   1
+     A   28   LYS   N      116.425   0.1    N   15
+     A   30   PHE   C      178.365   0.1    C   13
+     A   30   PHE   CA     56.562    0.1    C   13
+     A   30   PHE   CB     37.63     0.02   C   13
+     A   30   PHE   H      8.657     0.01   H   1
+     A   30   PHE   HA     4.82      0.01   H   1
+     A   30   PHE   HBx    3.37      0.01   H   1
+     A   30   PHE   HBy    2.87      0.01   H   1
+     A   30   PHE   N      119.881   0.1    N   15
+     A   31   LYS   C      179.503   0.1    C   13
+     A   31   LYS   CA     59.79     0.1    C   13
+     A   31   LYS   CB     31.57     0.02   C   13
+     A   31   LYS   H      9.077     0.01   H   1
+     A   31   LYS   HA     4.13      0.01   H   1
+     A   31   LYS   HBx    1.554     0.01   H   1
+     A   31   LYS   HBy    1.65      0.01   H   1
+     A   31   LYS   N      122.999   0.1    N   15
+     A   32   GLN   C      177.105   0.1    C   13
+     A   32   GLN   CA     58.763    0.1    C   13
+     A   32   GLN   CB     28.25     0.02   C   13
+     A   32   GLN   H      7.549     0.01   H   1
+     A   32   GLN   HA     4.054     0.01   H   1
+     A   32   GLN   HBx    2.222     0.01   H   1
+     A   32   GLN   HBy    1.222     0.01   H   1
+     A   32   GLN   N      119.718   0.1    N   15
+
+   stop_
+
+save_
+
+save_nef_chemical_shift_list_preds
+   _nef_chemical_shift_list.sf_category   nef_chemical_shift_list
+   _nef_chemical_shift_list.sf_framecode  nef_chemical_shift_list_preds
+
+   loop_
+      _nef_chemical_shift.chain_code
+      _nef_chemical_shift.sequence_code
+      _nef_chemical_shift.residue_name
+      _nef_chemical_shift.atom_name
+      _nef_chemical_shift.value
+      _nef_chemical_shift.value_uncertainty
+      _nef_chemical_shift.element
+      _nef_chemical_shift.isotope_number
+
+     A   22   ASP   C      174.913   .   .   .
+     A   22   ASP   CA     52.42     .   .   .
+     A   22   ASP   CB     42.47     .   .   .
+     A   22   ASP   CG     179.91    .   .   .
+     A   22   ASP   H      7.41      .   .   .
+     A   22   ASP   HA     4.82      .   .   .
+     A   22   ASP   HB2    2.938     .   .   .
+     A   22   ASP   HB3    3.046     .   .   .
+     A   22   ASP   N      115.11    .   .   .
+     A   23   ALA   C      179.23    .   .   .
+     A   23   ALA   CA     54.59     .   .   .
+     A   23   ALA   CB     18.06     .   .   .
+     A   23   ALA   H      8.519     .   .   .
+     A   23   ALA   HA     3.37      .   .   .
+     A   23   ALA   HB     1.23      .   .   .
+     A   23   ALA   HB2    1.789     .   .   .
+     A   23   ALA   HB3    1.583     .   .   .
+     A   23   ALA   N      121.56    .   .   .
+     A   24   GLU   C      178.6     .   .   .
+     A   24   GLU   CA     59.21     .   .   .
+     A   24   GLU   CB     29.1      .   .   .
+     A   24   GLU   CD     183.32    .   .   .
+     A   24   GLU   CG     36.596    .   .   .
+     A   24   GLU   H      8.52      .   .   .
+     A   24   GLU   HA     3.961     .   .   .
+     A   24   GLU   HB2    1.934     .   .   .
+     A   24   GLU   HB3    2.003     .   .   .
+     A   24   GLU   HG2    2.268     .   .   .
+     A   24   GLU   HG3    2.164     .   .   .
+     A   24   GLU   N      119.36    .   .   .
+     A   25   THR   C      176.54    .   .   .
+     A   25   THR   CA     67.04     .   .   .
+     A   25   THR   CB     68.01     .   .   .
+     A   25   THR   CG2    22.255    .   .   .
+     A   25   THR   H      8.35      .   .   .
+     A   25   THR   HA     3.76      .   .   .
+     A   25   THR   HB     4.06      .   .   .
+     A   25   THR   HG2    1.026     .   .   .
+     A   25   THR   N      117.49    .   .   .
+     A   26   ALA   C      176.929   .   .   .
+     A   26   ALA   CA     54.81     .   .   .
+     A   26   ALA   CB     17.5      .   .   .
+     A   26   ALA   H      7.19      .   .   .
+     A   26   ALA   HA     3.259     .   .   .
+     A   26   ALA   HB     0.791     .   .   .
+     A   26   ALA   HB2    1.812     .   .   .
+     A   26   ALA   HB3    1.61      .   .   .
+     A   26   ALA   N      124.51    .   .   .
+     A   28   LYS   C      178.89    .   .   .
+     A   28   LYS   CA     59.58     .   .   .
+     A   28   LYS   CB     32.41     .   .   .
+     A   28   LYS   CD     29.54     .   .   .
+     A   28   LYS   CE     42.329    .   .   .
+     A   28   LYS   CG     25.831    .   .   .
+     A   28   LYS   H      7.328     .   .   .
+     A   28   LYS   HA     3.82      .   .   .
+     A   28   LYS   HB2    1.88      .   .   .
+     A   28   LYS   HB3    1.88      .   .   .
+     A   28   LYS   HD2    1.57      .   .   .
+     A   28   LYS   HD3    1.65      .   .   .
+     A   28   LYS   HE2    2.916     .   .   .
+     A   28   LYS   HE3    2.905     .   .   .
+     A   28   LYS   HG2    1.36      .   .   .
+     A   28   LYS   HG3    1.36      .   .   .
+     A   28   LYS   HZ     7.493     .   .   .
+     A   28   LYS   N      117.47    .   .   .
+     A   30   PHE   C      178.42    .   .   .
+     A   30   PHE   CA     57.906    .   .   .
+     A   30   PHE   CB     37.594    .   .   .
+     A   30   PHE   CD1    130.92    .   .   .
+     A   30   PHE   CD2    130.92    .   .   .
+     A   30   PHE   CE1    130.76    .   .   .
+     A   30   PHE   CE2    130.76    .   .   .
+     A   30   PHE   CG     139.418   .   .   .
+     A   30   PHE   CZ     129.059   .   .   .
+     A   30   PHE   H      8.52      .   .   .
+     A   30   PHE   HA     4.822     .   .   .
+     A   30   PHE   HB2    2.904     .   .   .
+     A   30   PHE   HB3    3.357     .   .   .
+     A   30   PHE   HD1    6.985     .   .   .
+     A   30   PHE   HD2    6.58      .   .   .
+     A   30   PHE   HE1    7.06      .   .   .
+     A   30   PHE   HE2    7.06      .   .   .
+     A   30   PHE   HZ     7.181     .   .   .
+     A   30   PHE   N      118.06    .   .   .
+     A   31   LYS   C      180.02    .   .   .
+     A   31   LYS   CA     60.24     .   .   .
+     A   31   LYS   CB     31.96     .   .   .
+     A   31   LYS   CD     29.537    .   .   .
+     A   31   LYS   CE     41.476    .   .   .
+     A   31   LYS   CG     25.404    .   .   .
+     A   31   LYS   H      9.048     .   .   .
+     A   31   LYS   HA     4.154     .   .   .
+     A   31   LYS   HB2    1.72      .   .   .
+     A   31   LYS   HB3    1.703     .   .   .
+     A   31   LYS   HD2    1.341     .   .   .
+     A   31   LYS   HD3    1.339     .   .   .
+     A   31   LYS   HE2    2.868     .   .   .
+     A   31   LYS   HE3    3.05      .   .   .
+     A   31   LYS   HG2    1.121     .   .   .
+     A   31   LYS   HG3    1.122     .   .   .
+     A   31   LYS   HZ     7.435     .   .   .
+     A   31   LYS   N      121.601   .   .   .
+     A   32   GLN   C      177.009   .   .   .
+     A   32   GLN   CA     59.311    .   .   .
+     A   32   GLN   CB     28.22     .   .   .
+     A   32   GLN   CD     180.455   .   .   .
+     A   32   GLN   CG     34.18     .   .   .
+     A   32   GLN   H      7.76      .   .   .
+     A   32   GLN   HA     4.11      .   .   .
+     A   32   GLN   HB2    2.26      .   .   .
+     A   32   GLN   HB3    2.286     .   .   .
+     A   32   GLN   HE21   7.02      .   .   .
+     A   32   GLN   HE22   7.178     .   .   .
+     A   32   GLN   HG2    2.47      .   .   .
+     A   32   GLN   HG3    2.485     .   .   .
+     A   32   GLN   N      120.923   .   .   .
+
+   stop_
+
+save_
+
+save_nef_rdc_restraint_list_NH_preds
+   _nef_rdc_restraint_list.sf_category     nef_rdc_restraint_list
+   _nef_rdc_restraint_list.sf_framecode    nef_rdc_restraint_list_NH_preds
+   _nef_rdc_restraint_list.potential_type  .
+
+   loop_
+      _nef_rdc_restraint.index
+      _nef_rdc_restraint.restraint_id
+      _nef_rdc_restraint.restraint_combination_id
+      _nef_rdc_restraint.chain_code_1
+      _nef_rdc_restraint.sequence_code_1
+      _nef_rdc_restraint.residue_name_1
+      _nef_rdc_restraint.atom_name_1
+      _nef_rdc_restraint.chain_code_2
+      _nef_rdc_restraint.sequence_code_2
+      _nef_rdc_restraint.residue_name_2
+      _nef_rdc_restraint.atom_name_2
+      _nef_rdc_restraint.weight
+      _nef_rdc_restraint.target_value
+      _nef_rdc_restraint.target_value_uncertainty
+
+     22   22   .   A   22   ASP   H   A   22   ASP   N   1.0   -5.9812    1.0
+     23   23   .   A   23   ALA   H   A   23   ALA   N   1.0   -0.0327    1.0
+     24   24   .   A   24   GLU   H   A   24   GLU   N   1.0   -15.0215   1.0
+     25   25   .   A   25   THR   H   A   25   THR   N   1.0   -13.721    1.0
+     26   26   .   A   26   ALA   H   A   26   ALA   N   1.0   -5.4285    1.0
+
+     28   28   .   A   28   LYS   H   A   28   LYS   N   1.0   -17.5376   1.0
+
+     30   30   .   A   30   PHE   H   A   30   PHE   N   1.0   -12.8044   1.0
+     31   31   .   A   31   LYS   H   A   31   LYS   N   1.0   -6.403     1.0
+     32   32   .   A   32   GLN   H   A   32   GLN   N   1.0   -13.8255   1.0
+
+   stop_
+
+save_
+
+save_nef_rdc_restraint_list_NH_measured
+   _nef_rdc_restraint_list.sf_category     nef_rdc_restraint_list
+   _nef_rdc_restraint_list.sf_framecode    nef_rdc_restraint_list_NH_measured
+   _nef_rdc_restraint_list.potential_type  .
+
+   loop_
+      _nef_rdc_restraint.index
+      _nef_rdc_restraint.restraint_id
+      _nef_rdc_restraint.restraint_combination_id
+      _nef_rdc_restraint.chain_code_1
+      _nef_rdc_restraint.sequence_code_1
+      _nef_rdc_restraint.residue_name_1
+      _nef_rdc_restraint.atom_name_1
+      _nef_rdc_restraint.chain_code_2
+      _nef_rdc_restraint.sequence_code_2
+      _nef_rdc_restraint.residue_name_2
+      _nef_rdc_restraint.atom_name_2
+      _nef_rdc_restraint.weight
+      _nef_rdc_restraint.target_value
+      _nef_rdc_restraint.target_value_uncertainty
+
+     22   22   .   A   22   ASP   H   A   @122   ASP   N   1.0   -4.294    .
+     23   23   .   A   23   ALA   H   A   @123   ALA   N   1.0   -2.326    .
+     24   24   .   A   24   GLU   H   A   @124   GLU   N   1.0   -13.433   .
+     25   25   .   A   25   THR   H   A   @125   THR   N   1.0   -10.596   .
+     26   26   .   A   26   ALA   H   A   @126   ALA   N   1.0   -5.413    .
+
+     28   28   .   A   28   LYS   H   A   @128   LYS   N   1.0   -16.158   .
+
+     30   30   .   A   30   PHE   H   A   @130   PHE   N   1.0   -8.662    .
+     31   31   .   A   31   LYS   H   A   @131   LYS   N   1.0   -13.968   .
+     32   32   .   A   32   GLN   H   A   @132   GLN   N   1.0   -16.039   .
+
+   stop_
+
+save_
+

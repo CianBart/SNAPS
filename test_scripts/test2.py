@@ -29,7 +29,7 @@ tmp = pd.DataFrame(list(itertools.permutations(peaks, 2)))
 for a in atoms:
 #    tmp2 = tmp
 #    tmp2.columns = [x for x in atoms if x is not a]
-#    tmp2[a] = np.NaN
+#    tmp2[a] = np.nan
     tmp2 = tmp.copy()
     tmp2.columns = [x for x in atoms if x is not a]
     df1 = df1.append(tmp2)
@@ -46,7 +46,7 @@ for m in missing:
     
 # With 3 missing
 df3 = pd.DataFrame(columns=atoms)
-df3.loc[0] = [np.NaN]*3
+df3.loc[0] = [np.nan]*3
 
 df = pd.concat([df0, df1, df2, df3], ignore_index=True)
 

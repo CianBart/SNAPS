@@ -185,7 +185,7 @@ mvn.pdf(x)
 
 x=np.array([[0,1],[2,3]])
 y=np.array([[4,5],[6,7]])
-z=np.array([[8,9],[10,np.NaN]])
+z=np.array([[8,9],[10,np.nan]])
 xyz = np.array([x,y,z])
 xyz = np.moveaxis(xyz, 0, -1)
 mvn = multivariate_normal([0,0,0],[1,1,1])

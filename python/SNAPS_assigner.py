@@ -7,23 +7,23 @@ the imported chemical shifts and the log probability matrix).
 
 @author: aph516
 """
+import sys
+from xmlrpc.client import DateTime
 
 import numpy as np
 import pandas as pd
 from bokeh.plotting import figure, output_file, save
 from bokeh.layouts import gridplot
 from bokeh.models.ranges import Range1d
-from bokeh.models import WheelZoomTool, LabelSet, ColumnDataSource, Span
+from bokeh.models import LabelSet, ColumnDataSource, Span
 from bokeh.io import export_png
 from bokeh.embed import json_item
 from scipy.stats import norm, multivariate_normal
 from scipy.optimize import linear_sum_assignment
-from math import log10, sqrt
+from math import log10
 from copy import deepcopy
-from pathlib import Path
 # from Bio.SeqUtils import seq1
 from Bio import SeqIO
-from str2bool3 import str2bool
 from collections import namedtuple
 from sortedcontainers import SortedListWithKey
 # from textwrap import dedent
@@ -31,7 +31,9 @@ import logging
 import yaml
 from pathlib import Path
 
-from NEF_reader import read_nef_pred_shifts_from_file_to_pandas
+from lib.NEF_reader import read_nef_pred_shifts_from_file_to_pandas
+from lib.rdcs_lib import build_magnitude_log_probability_tables, magnitude_matrix_to_log_probability_matrix, \
+    add_penalty_tables
 
 
 def df_lookup(df, row_labels, col_labels, index="rows"):
@@ -78,7 +80,8 @@ class SNAPS_assigner:
                      "atom_sd": {'H': 0.1711, 'N': 1.1169, 'HA': 0.1231,
                                  'C': 0.5330, 'CA': 0.4412, 'CB': 0.5163,
                                  'C_m1': 0.5530, 'CA_m1': 0.4412, 'CB_m1': 0.5163},
-                     "seq_link_threshold": 0.2}
+                     "seq_link_threshold": 0.2,
+                     'use_ss_class_info': False }
         self.logger = logging.getLogger("SNAPS.assigner")
 
         if False:
@@ -228,14 +231,17 @@ class SNAPS_assigner:
             from SNAPS_importer import SNAPS_importer
             importer = SNAPS_importer()
 
+
+
             preds_long = read_nef_pred_shifts_from_file_to_pandas(filename, chain)
+
 
             preds_long = preds_long.loc[:,['Res_N', 'Res_type', 'Atom_type', 'Shift']]
 
             preds_long = preds_long.astype({'Res_N': 'int32', 'Shift': 'float64'})
 
             preds_long.rename(columns={'sequence_code': 'Res_N', 'atom_name': 'Atom_type', 'value': 'Shift'})
-
+            #print(preds_long, 'preds')
 
         elif filetype == "shiftx2":
             preds_long = pd.read_csv(filename)
@@ -259,12 +265,15 @@ class SNAPS_assigner:
 
             preds_long = pd.read_table(filename, sep=r"\s+", names=colnames,
                                        skiprows=colnames_line + 1)
+
             preds_long = preds_long.reindex(columns=["RESID", "RESNAME",
                                                      "ATOMNAME", "SHIFT"])
             preds_long.columns = ["Res_N", "Res_type", "Atom_type", "Shift"]
 
             # Sparta+ uses HN for backbone amide proton - convert to H
             preds_long.loc[preds_long["Atom_type"] == "HN", "Atom_type"] = "H"
+
+
         else:
             self.logger.error("""Invalid predicted shift type: '%s'. Allowed
                               options are 'shiftx2' or 'sparta+'""" % (filetype))
@@ -279,12 +288,14 @@ class SNAPS_assigner:
         preds_long.insert(1, "Res_name", (preds_long["Res_N"].astype(str) +
                                           preds_long["Res_type"]))
         # Left pad with spaces to a constant length (helps with sorting)
-        preds_long["Res_name"] = preds_long["Res_name"].str.rjust(5)
+        #preds_long["Res_name"] = preds_long["Res_name"].str.rjust(5)
+        #(preds_long, 'preds_long')
 
         # Convert from long to wide format
         preds = preds_long.pivot(index="Res_N", columns="Atom_type",
                                  values="Shift")
         preds.index.name = None
+
 
         # Add the other residue name and type back in
         tmp = preds_long[["Res_N", "Res_type", "Res_name"]]
@@ -292,7 +303,7 @@ class SNAPS_assigner:
         tmp.index = tmp["Res_N"]
         tmp.index.name = None
         preds = pd.concat([tmp, preds], axis=1)
-
+        #print(preds,'predssssss')
         #### Make consistent with seq_df (and create if it doesn't already exist)
         # TODO: Maybe this should be split off into a separate function?
         # If seq_df is missing, create it based on preds
@@ -308,7 +319,7 @@ class SNAPS_assigner:
                                        difference(seq_df["Res_N"]))
             if len(missing_residue_numbers) > 0:
                 tmp = pd.DataFrame({"Res_N": list(missing_residue_numbers),
-                                    "Res_type": "X", "Res_name": np.NaN})
+                                    "Res_type": "X", "Res_name": np.nan})
                 tmp["Res_name"] = tmp["Res_N"].astype(str) + tmp["Res_type"]
                 tmp["Res_name"] = tmp["Res_name"].str.rjust(5)
                 tmp.index = tmp["Res_N"]
@@ -392,6 +403,7 @@ class SNAPS_assigner:
                          % (len(preds.index), filename))
 
         self.preds = preds
+        # print(preds, 'predspredspreds')
         return (self.preds)
 
     def simulate_pred_shifts(self, filename, sd, seed=None):
@@ -455,6 +467,7 @@ class SNAPS_assigner:
                       list(atom_set.intersection(preds.columns))]
 
         self.preds = preds
+
         return (self.preds)
 
     def prepare_obs_preds(self):
@@ -469,6 +482,8 @@ class SNAPS_assigner:
         """
 
         obs = self.obs.copy()
+        #print('self.preds',self.preds)
+
         preds = self.preds.copy()
 
         #### Delete any prolines in preds
@@ -481,8 +496,8 @@ class SNAPS_assigner:
         preds = preds.drop(preds.index[preds["Res_type"] == "X"])
 
         # Remove references to deleted residues from Res_name_m1/p1
-        preds.loc[~preds["Res_name_m1"].isin(preds["Res_name"]), "Res_name_m1"] = np.NaN
-        preds.loc[~preds["Res_name_p1"].isin(preds["Res_name"]), "Res_name_p1"] = np.NaN
+        preds.loc[~preds["Res_name_m1"].isin(preds["Res_name"]), "Res_name_m1"] = np.nan
+        preds.loc[~preds["Res_name_p1"].isin(preds["Res_name"]), "Res_name_p1"] = np.nan
 
         #### Restrict atom types
         # self.pars["atom_set"] is the set of atoms to be used in the analysis
@@ -509,7 +524,7 @@ class SNAPS_assigner:
         M = len(preds.index)
 
         if N > M:  # If there are more spin systems than predictions
-            dummies = pd.DataFrame(np.NaN, columns=preds.columns,
+            dummies = pd.DataFrame(np.nan, columns=preds.columns,
                                    index=["DR_" + str(i) for i in 1 + np.arange(N - M)])
             dummies["Res_name"] = dummies.index
             dummies["Dummy_res"] = True
@@ -517,7 +532,7 @@ class SNAPS_assigner:
             preds = pd.concat([preds, dummies])
             self.logger.info("Added %d dummy predicted residues" % len(dummies.index))
         elif M > N:
-            dummies = pd.DataFrame(np.NaN, columns=obs.columns,
+            dummies = pd.DataFrame(np.nan, columns=obs.columns,
                                    index=["DSS_" + str(i) for i in 1 + np.arange(M - N)])
             dummies["SS_name"] = dummies.index
             dummies["Dummy_SS"] = True
@@ -527,7 +542,8 @@ class SNAPS_assigner:
 
         self.obs = obs.copy()
         self.preds = preds.copy()
-
+        print('recently needed pbs\n', obs)
+        print('recently needed preds\n', preds)
         return (self.obs, self.preds)
 
     def calc_log_prob_matrix(self, atom_sd=None, sf=1, default_prob=0.01):
@@ -551,12 +567,16 @@ class SNAPS_assigner:
         default_prob: penalty for missing data
         """
 
+        print('self.pars\n', self.pars)
         # Use default atom_sd values if not defined
-        if atom_sd == None:
+        if atom_sd is None:
             atom_sd = self.pars["atom_sd"]
 
         obs = self.obs.copy()
+        print ('obs\n', obs)
+
         preds = self.preds.copy()
+        print('preds \n', preds)
         atoms = list(self.pars["atom_set"].intersection(obs.columns))
 
         if self.pars["pred_correction"]:
@@ -591,8 +611,9 @@ class SNAPS_assigner:
             delta_list = []
 
         log_prob_matrix = pd.DataFrame(0, index=obs.index, columns=preds.index)
-        log_prob_matrix.index.name = "SS_name"
-        log_prob_matrix.columns.name = "Res_name"
+        log_prob_matrix.index.name = "Res_name"
+        log_prob_matrix.columns.name ="SS_name"
+
 
         for atom in atoms:
             # The most efficient way I've found to do the calculation is to
@@ -677,7 +698,7 @@ class SNAPS_assigner:
             mvn = multivariate_normal(d_mean, d_cov)
             log_prob_matrix = pd.DataFrame(mvn.logpdf(delta_mat),
                                            index=obs.index, columns=preds.index)
-
+            print('log probability before penalties\n', log_prob_matrix)
             # Apply a penalty for missing data
             na_matrix = na_mask.sum(axis=-1)  # Count how many NA values for
             # each Res/SS pair
@@ -687,21 +708,34 @@ class SNAPS_assigner:
 
         if self.pars["use_ss_class_info"]:
             log_prob_matrix = self._apply_ss_class_penalties(log_prob_matrix, obs, preds)
-
+            print('log probability after penalties\n', log_prob_matrix)
         # Sort out NAs and dummy residues/spin systems
         log_prob_matrix[log_prob_matrix.isna()] = 2 * np.nanmin(
             log_prob_matrix.values)
         log_prob_matrix.loc[obs["Dummy_SS"], :] = 0
         log_prob_matrix.loc[:, preds["Dummy_res"]] = 0
 
-        log_prob_matrix.index.name = "SS_name"
-        log_prob_matrix.columns.name = "Res_name"
+        log_prob_matrix.index.name = "Res_name"
+        log_prob_matrix.columns.name = "SS_name"
 
         self.logger.info("Calculated log probability matrix (%dx%d)",
                          log_prob_matrix.shape[0], log_prob_matrix.shape[1])
 
         self.log_prob_matrix = log_prob_matrix
+        print(log_prob_matrix.to_string())
         return (self.log_prob_matrix)
+
+    def calc_rdc_log_prob_matrix(self, dataframe: pd.DataFrame ):
+
+        RDC_log_probability_matrix = magnitude_matrix_to_log_probability_matrix(dataframe)
+        print('rdc log probability matrix \n',RDC_log_probability_matrix )
+        return RDC_log_probability_matrix
+
+    def combine_penalty_tables(self, rdc_dataframe: pd.DataFrame, snaps_dataframe: pd.DataFrame):
+        penalty_table=add_penalty_tables(rdc_dataframe,snaps_dataframe)
+        print(penalty_table)
+        return penalty_table
+
 
     @staticmethod
     def _apply_ss_class_penalties(log_prob_matrix, obs, preds):
@@ -722,6 +756,7 @@ class SNAPS_assigner:
             SS_class_matrix = pd.DataFrame(0.0, index=log_prob_matrix.index,
                                            columns=log_prob_matrix.columns)
 
+
             # For each amino acid type in turn:
             for res in preds[active_res_ss_class].dropna().unique():
                 # Work out which observations could be that aa type
@@ -741,6 +776,7 @@ class SNAPS_assigner:
 
 
             log_prob_matrix = log_prob_matrix + SS_class_matrix
+
 
         return log_prob_matrix
 
@@ -910,8 +946,10 @@ class SNAPS_assigner:
         """
         obs = self.obs.copy()
         obs.index.name = "name"  # Needed to avoid error when merging dataframes.
+        # print(obs,'obs')
         preds = self.preds.copy()
         log_prob_matrix = self.log_prob_matrix.copy()
+        #print (preds, ' preds')
         valid_atoms = list(self.pars["atom_set"])
         extra_cols = set(matching.columns).difference({"SS_name", "Res_name"})
 
@@ -923,6 +961,8 @@ class SNAPS_assigner:
                              preds.loc[:, ["Res_N", "Res_type", "Res_name",
                                            "Dummy_res"]],
                              on="Res_name", how="left")
+
+
         assign_df = assign_df[["Res_name", "Res_N", "Res_type", "SS_name",
                                "Dummy_res"] + list(extra_cols)]
         assign_df = pd.merge(assign_df,
@@ -957,6 +997,7 @@ class SNAPS_assigner:
         assign_df = self.make_assign_df(matching, set_assign_df)
 
         self.logger.info("Finished calculating best assignment based on predictions")
+
         return (assign_df)
 
     def calc_overall_matching_prob(self, matching):
@@ -1081,8 +1122,8 @@ class SNAPS_assigner:
             self.logger.info("Finished checking assignment consistency")
         else:
             # You can't do a comparison without sequential atoms
-            assign_df["Max_mismatch_m1"] = np.NaN
-            assign_df["Max_mismatch_p1"] = np.NaN
+            assign_df["Max_mismatch_m1"] = np.nan
+            assign_df["Max_mismatch_p1"] = np.nan
             assign_df["Num_good_links_m1"] = 0
             assign_df["Num_good_links_p1"] = 0
             assign_df["Confidence"] = "Undefined"
@@ -1092,6 +1133,7 @@ class SNAPS_assigner:
 
         if set_assign_df:
             self.assign_df = assign_df
+
         return (assign_df)
 
     def find_alt_assignments(self, N=1, by_ss=True, verbose=False):
@@ -1581,7 +1623,7 @@ class SNAPS_assigner:
                 # Introduce NaN's to break the line into discontinuous segments
                 # "_z" in name is to ensure it sorts after the atom+"_m1" shifts
                 # eg. CA, CA_m1, CA_z
-                vlines[atom + "_z"] = np.NaN
+                vlines[atom + "_z"] = np.nan
                 # Convert from wide to long
                 vlines = vlines.melt(id_vars=["Res_name"],
                                      value_vars=[atom, atom + "_m1", atom + "_z"],
@@ -1597,7 +1639,7 @@ class SNAPS_assigner:
                 # Introduce NaN's to break the line into discontinuous segments
                 # "_a" in name ensures it sorts between the atom and atom+"_m1" shifts
                 # eg. CA, CA_a, CA_m1
-                hlines[atom + "_a"] = np.NaN
+                hlines[atom + "_a"] = np.nan
                 # Convert from wide to long
                 hlines = hlines.melt(id_vars=["Res_name"],
                                      value_vars=[atom, atom + "_m1", atom + "_a"],

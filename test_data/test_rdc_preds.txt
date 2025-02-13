@@ -1,0 +1,7 @@
+
+     Res_name Res_type Res_name_p1 Res_name_m1  Res_N Res_type_m1     HA        C      H     CB        N      CA  Dummy_res
+22D      22D        D         23A         NaN     22         NaN  4.754  174.798  7.373  42.38  115.403  52.514      False
+23A      23A        A         24E         22D     23           D  3.374  179.383  8.393  17.61  121.205  54.559      False
+24E      24E        E         25T         23A     24           A  3.886  179.303  8.487  29.05  119.144  66.844      False
+25T      25T        T         26A         24E     25           E  3.705  177.049  8.409  67.89  117.485  66.844      False
+

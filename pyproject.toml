@@ -1,0 +1,11 @@
+[project]
+name = "snaps"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pandas>=2.2.3",
+    "pynmrstar>=3.3.4",
+    "scipy>=1.14.1",
+]

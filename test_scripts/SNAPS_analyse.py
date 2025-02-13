@@ -79,7 +79,7 @@ def check_assignment_accuracy(data_dir, testset_df, ID_list,
         # Add a column with the residue type of the spin system
         # (as opposed to the prediction assigned to it)
         tmp["SS_type"] = tmp["SS_name"].str[-1:]
-        tmp.loc[tmp["Dummy_SS"],"SS_type"] = np.NaN
+        tmp.loc[tmp["Dummy_SS"],"SS_type"] = np.nan
 
         if assigns is None:
             assigns = tmp
@@ -207,7 +207,7 @@ def collect_assignment_results(data_dir, testset_df, ID_list, prefix="", output_
         # Add a column with the residue type of the spin system
         # (as opposed to the prediction assigned to it)
         tmp["SS_type"] = tmp["SS_name"].str[-1:]
-        tmp.loc[tmp["Dummy_SS"],"SS_type"] = np.NaN
+        tmp.loc[tmp["Dummy_SS"],"SS_type"] = np.nan
 
         if assigns is None:
             assigns = tmp
@@ -294,7 +294,7 @@ def summarise_results(assigns, output_file=None):
         if c=="Dummy_SS":
             continue
         summary[c+"_pc"] = 100 * summary[c]/summary["N_SS"]
-        summary[c+"_pc_correct"] = 100 * summary[c+"_correct"]/summary[c].replace({0:np.NaN})
+        summary[c+"_pc_correct"] = 100 * summary[c+"_correct"]/summary[c].replace({0:np.nan})
 
     if output_file is not None:
         assigns.to_csv(output_file, sep="\t", float_format="%.3f")

@@ -11,7 +11,10 @@ import pandas as pd
 from Bio.SeqUtils import seq1
 from math import sqrt
 
-from NEF_reader import read_nef_obs_shifts_from_file_to_pandas, TRANSLATIONS_3_1_PROTEIN, _split_path_and_frame
+from lib.NEF_reader import read_nef_obs_shifts_from_file_to_pandas, TRANSLATIONS_3_1_PROTEIN, _split_path_and_frame
+
+from lib.rdcs_lib import get_nef_entry, build_log_probability_from_entry, pred_measured_to_magnitude_matrix
+
 
 POSSIBLE_1LET_AAS_STR = "ACDEFGHIKLMNPQRSTVWY"
 
@@ -32,6 +35,8 @@ class SNAPS_importer:
         #assignments = {}
         self.roots = None
         self.obs = None
+        self.preds = None
+        self.rdc = None
     
     # Functions
     def import_hsqc_peaks(self, filename, filetype):
@@ -358,6 +363,7 @@ class SNAPS_importer:
             obs = obs.loc[:, ["SS_name", "Atom_type", "Shift"]]
             obs["SS_name"] = obs["SS_name"].astype(str)
             obs.loc[obs["Atom_type"] == "HN", "Atom_type"] = "H"
+
         elif filetype == "mars":
             obs_wide = pd.read_table(filename, sep=r"\s+", na_values="-")
             obs_wide = obs_wide.rename(columns={"CO":"C","CO-1":"C_m1",
@@ -377,7 +383,7 @@ class SNAPS_importer:
         else:
             print("import_obs_shifts: invalid filetype '%s'." % (filetype))
             return(None)
-        
+
         # Restrict to backbone atom types
         obs = obs.loc[obs["Atom_type"].isin(["H","HA","N","C","CA","CB",
                                              "C_m1","CA_m1","CB_m1"]),:]
@@ -718,7 +724,8 @@ class SNAPS_importer:
         if remove_Pro:
             # Remove prolines, as they wouldn't be observed in a real spectrum
             obs = obs.drop(obs.index[obs["Res_type"].isin(["PRO", "P"])])
-        
+
+
         self.obs = obs
         return(self.obs)
     
@@ -739,5 +746,13 @@ class SNAPS_importer:
         
         return(df)
         
+    def import_rdc_data(self, file_name : any  ):
+
+        entry=get_nef_entry(file_name)
+
+        dataframe_predicted, dataframe_measured=build_log_probability_from_entry(entry, predicted='NH_preds', measured='NH_measured')
+        rdc_magnitude_matrix= pred_measured_to_magnitude_matrix( dataframe_predicted,dataframe_measured)
+        return rdc_magnitude_matrix
+
 
 

@@ -330,16 +330,16 @@ def add_dummy_rows(obs, preds):
     M = len(preds.index)
     
     if N>M:     # If there are more spin systems than predictions
-        dummies = pd.DataFrame(np.NaN, index=["dummy_res_"+str(i) for i in 1+np.arange(N-M)], columns = preds.columns)
+        dummies = pd.DataFrame(np.nan, index=["dummy_res_"+str(i) for i in 1+np.arange(N-M)], columns = preds.columns)
         dummies["Res_name"] = dummies.index
         dummies["Dummy_res"] = True
         preds = preds.append(dummies)        
     elif M>N:
-        dummies = pd.DataFrame(np.NaN, index=["dummy_SS_"+str(i) for i in 1+np.arange(M-N)], columns = obs.columns)
+        dummies = pd.DataFrame(np.nan, index=["dummy_SS_"+str(i) for i in 1+np.arange(M-N)], columns = obs.columns)
         dummies["SS_name"] = dummies.index
         dummies["Dummy_SS"] = True
         obs = obs.append(dummies)
-        #obs.loc[["dummy_"+str(i) for i in 1+np.arange(M-N)]] = np.NaN
+        #obs.loc[["dummy_"+str(i) for i in 1+np.arange(M-N)]] = np.nan
         #obs.loc[obs.index[N:M], "SS_name"] = ["dummy_"+str(i) for i in 1+np.arange(M-N)]
     
     return(obs, preds)
@@ -397,7 +397,7 @@ def calc_log_prob_matrix(obs, preds,
                                     'Cm1':0.5530, 'CAm1':0.4412, 'CBm1':0.5163}, sf=1, default_prob=0.01, 
                                      verbose=False, use_hadamac=False):
     # Calculate a matrix of -log10(match probabilities)
-    prob_matrix = pd.DataFrame(np.NaN, index=obs.index, columns=preds.index)    # Initialise matrix as NaN
+    prob_matrix = pd.DataFrame(np.nan, index=obs.index, columns=preds.index)    # Initialise matrix as NaN
     
     for i in preds.index:
         if verbose: print(i)
@@ -570,7 +570,7 @@ def check_assignment_consistency(assign_df, threshold=0.1):
     
         if seq_atoms.size==0:
             # You can't do a comparison
-            assign_df[["Max_mismatch_prev", "Max_mismatch_next", "Num_good_links_prev", "Num_good_links_next"]] = np.NaN
+            assign_df[["Max_mismatch_prev", "Max_mismatch_next", "Num_good_links_prev", "Num_good_links_next"]] = np.nan
             return(assign_df)
         else:
             # First, get the i and i-1 shifts for the preceeding and succeeding residues

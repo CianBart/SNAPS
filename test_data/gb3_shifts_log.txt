@@ -1,0 +1,11 @@
+11:30:59 INFO All required parameters imported
+11:30:59 INFO Finished reading in config parameters from ../config/config_yaml.txt
+11:30:59 INFO Finished reading in 9 spin systems from ../test_data/gb3_shifts_rdcs_22_32.nef
+11:30:59 INFO Imported 70 predicted chemical shifts from ../test_data/gb3_shifts_rdcs_22_32.nef
+11:30:59 INFO 2 residues from the sequence were missing from the predictions
+11:30:59 INFO Finished reading in 11 predicted residues from ../test_data/gb3_shifts_rdcs_22_32.nef
+11:30:59 INFO Removing 0 prolines from predictions
+11:30:59 INFO Restricted atom types to CA,HA,N,CB,H,C
+11:30:59 INFO Imported delta_correlation info from ../config/d_mean.csv and ../config/d_cov.csv
+11:30:59 INFO Accounting for correlated prediction errors
+11:30:59 INFO Calculated log probability matrix (9x9)

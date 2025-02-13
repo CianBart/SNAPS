@@ -1,0 +1,166 @@
+data_gb3_rdcs
+
+   save_nef_nmr_meta_data
+      _nef_nmr_meta_data.sf_category      nef_nmr_meta_data
+      _nef_nmr_meta_data.sf_framecode     nef_nmr_meta_data
+      _nef_nmr_meta_data.format_name      nmr_exchange_format
+      _nef_nmr_meta_data.format_version   1.1
+      _nef_nmr_meta_data.program_name     NEFPipelines
+      _nef_nmr_meta_data.script_name      pdbx/import/sequence.py
+      _nef_nmr_meta_data.program_version  0.1.92
+      _nef_nmr_meta_data.creation_date    2024-12-02T15:21:43.770377
+      _nef_nmr_meta_data.uuid             NEFPipelines-2024-12-02T15:21:43.770377-3250273692
+
+     
+
+   save_
+
+   save_nef_molecular_system
+      _nef_molecular_system.sf_category   nef_molecular_system
+      _nef_molecular_system.sf_framecode  nef_molecular_system
+
+      loop_
+         _nef_sequence.index
+         _nef_sequence.chain_code
+         _nef_sequence.sequence_code
+         _nef_sequence.residue_name
+         _nef_sequence.linking
+         _nef_sequence.residue_variant
+         _nef_sequence.cis_peptide
+
+        1    A   1    THR   start    .   .    
+        2    A   2    THR   middle   .   .    
+        3    A   3    TYR   middle   .   .    
+        4    A   4    LYS   middle   .   .    
+        5    A   5    LEU   middle   .   .    
+        6    A   6    VAL   middle   .   .    
+        7    A   7    ILE   middle   .   .    
+        8    A   8    ASN   middle   .   .    
+        9    A   9    GLY   middle   .   .    
+        10   A   10   LYS   middle   .   .    
+        11   A   11   THR   middle   .   .    
+        12   A   12   LEU   middle   .   .    
+        13   A   13   LYS   middle   .   .    
+        14   A   14   GLY   middle   .   .    
+        15   A   15   GLU   middle   .   .    
+        16   A   16   THR   middle   .   .    
+        17   A   17   THR   middle   .   .    
+        18   A   18   THR   middle   .   .    
+        19   A   19   LYS   middle   .   .    
+        20   A   20   ALA   middle   .   .    
+        21   A   21   VAL   middle   .   .    
+        22   A   22   ASP   middle   .   .    
+        23   A   23   ALA   middle   .   .    
+        24   A   24   GLU   middle   .   .    
+        25   A   25   THR   middle   .   .    
+        26   A   26   ALA   middle   .   .    
+        27   A   27   GLU   middle   .   .    
+        28   A   28   LYS   middle   .   .    
+        29   A   29   ALA   middle   .   .    
+        30   A   30   PHE   middle   .   .    
+        31   A   31   LYS   middle   .   .    
+        32   A   32   GLN   middle   .   .    
+        33   A   33   TYR   middle   .   .    
+        34   A   34   ALA   middle   .   .    
+        35   A   35   ASN   middle   .   .    
+        36   A   36   ASP   middle   .   .    
+        37   A   37   ASN   middle   .   .    
+        38   A   38   GLY   middle   .   .    
+        39   A   39   VAL   middle   .   .    
+        40   A   40   ASP   middle   .   .    
+        41   A   41   GLY   middle   .   .    
+        42   A   42   VAL   middle   .   .    
+        43   A   43   TRP   middle   .   .    
+        44   A   44   THR   middle   .   .    
+        45   A   45   TYR   middle   .   .    
+        46   A   46   ASP   middle   .   .    
+        47   A   47   ASP   middle   .   .    
+        48   A   48   ALA   middle   .   .    
+        49   A   49   THR   middle   .   .    
+        50   A   50   LYS   middle   .   .    
+        51   A   51   THR   middle   .   .    
+        52   A   52   PHE   middle   .   .    
+        53   A   53   THR   middle   .   .    
+        54   A   54   VAL   middle   .   .    
+        55   A   55   THR   middle   .   .    
+        56   A   56   GLU   end      .   .    
+
+      stop_
+
+   save_
+
+
+   save_nef_rdc_restraint_list_NH_pred
+      _nef_rdc_restraint_list.sf_category       nef_rdc_restraint_list
+      _nef_rdc_restraint_list.sf_framecode      nef_rdc_restraint_list_NH_pred
+      _nef_rdc_restraint_list.potential_type    .
+
+     loop_
+       _nef_rdc_restraint.index
+       _nef_rdc_restraint.restraint_id
+       _nef_rdc_restraint.restraint_combination_id
+       _nef_rdc_restraint.chain_code_1
+       _nef_rdc_restraint.sequence_code_1
+       _nef_rdc_restraint.residue_name_1
+       _nef_rdc_restraint.atom_name_1
+       _nef_rdc_restraint.chain_code_2
+       _nef_rdc_restraint.sequence_code_2
+       _nef_rdc_restraint.residue_name_2
+       _nef_rdc_restraint.atom_name_2
+       _nef_rdc_restraint.weight
+       _nef_rdc_restraint.target_value
+       _nef_rdc_restraint.target_value_uncertainty
+
+
+
+       22  22 .  A  22  ASP  H  A  22  ASP  N  1.00  -5.9812  1.00
+       23  23 .  A  23  ALA  H  A  23  ALA  N  1.00  -0.0327  1.00
+       24  24 .  A  24  GLU  H  A  24  GLU  N  1.00  -15.0215 1.00 
+       25  25 .  A  25  THR  H  A  25  THR  N  1.00  -13.7210 1.00
+       26  26 .  A  26  ALA  H  A  26  ALA  N  1.00  -5.4285  1.00
+       28  28 .  A  28  LYS  H  A  28  LYS  N  1.00  -17.5376 1.00
+       30  30 .  A  30  ALA  H  A  30  ALA  N  1.00  -12.8044 1.00
+       31  31 .  A  31  PHE  H  A  31  PHE  N  1.00  -6.4030  1.00
+       32  32 .  A  32  LYS  H  A  32  LYS  N  1.00  -13.8255 1.00
+    
+
+     stop_
+   
+
+   save_
+
+   save_nef_rdc_restraint_list_NH_measured
+      _nef_rdc_restraint_list.sf_category        nef_rdc_restraint_list
+      _nef_rdc_restraint_list.sf_framecode       nef_rdc_restraint_list_NH_measured
+      _nef_rdc_restraint_list.potential_type  .
+
+     loop_
+       _nef_rdc_restraint.index
+       _nef_rdc_restraint.restraint_id
+       _nef_rdc_restraint.restraint_combination_id
+       _nef_rdc_restraint.chain_code_1
+       _nef_rdc_restraint.sequence_code_1
+       _nef_rdc_restraint.residue_name_1
+       _nef_rdc_restraint.atom_name_1
+       _nef_rdc_restraint.chain_code_2
+       _nef_rdc_restraint.sequence_code_2
+       _nef_rdc_restraint.residue_name_2
+       _nef_rdc_restraint.atom_name_2
+       _nef_rdc_restraint.weight
+       _nef_rdc_restraint.target_value
+       _nef_rdc_restraint.target_value_uncertainty
+
+
+       22  22 .  A  @122  ASP  H  A  @122  ASP  N  1.00  -4.294  .
+       23  23 .  A  @123  .  H  A  @123  .  N  1.00  -2.326  .
+       24  24 .  A  @124  .  H  A  @124  .  N  1.00  -13.433 . 
+       25  25 .  A  @125  .  H  A  @125  .  N  1.00  -10.596 .
+       26  26 .  A  @126  .  H  A  @126  .  N  1.00  -5.413  .
+       28  28 .  A  @128  .  H  A  @128  .  N  1.00  -16.158 .
+       30  30 .  A  @130  .  H  A  @130  .  N  1.00  -8.662  .
+       31  31 .  A  @131  .  H  A  @131  .  N  1.00  -13.968 .
+       32  32 .  A  @132  .  H  A  @132  .  N  1.00  -16.039 .
+       
+     stop_
+   save_
+

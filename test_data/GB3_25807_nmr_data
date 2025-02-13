@@ -1,0 +1,570 @@
+data_bmr25807
+
+save_nef_nmr_meta_data
+   _nef_nmr_meta_data.sf_category      nef_nmr_meta_data
+   _nef_nmr_meta_data.sf_framecode     nef_nmr_meta_data
+   _nef_nmr_meta_data.format_name      nmr_exchange_format
+   _nef_nmr_meta_data.format_version   1.1
+   _nef_nmr_meta_data.program_name     NEFPipelines
+   _nef_nmr_meta_data.script_name      nmrstar/import/project.py
+   _nef_nmr_meta_data.program_version  0.1.94
+   _nef_nmr_meta_data.creation_date    2025-01-21T10:43:03.029268
+   _nef_nmr_meta_data.uuid             NEFPipelines-2025-01-21T10:43:03.029268-9084132513
+
+   loop_
+      _nef_run_history.run_number
+      _nef_run_history.program_name
+      _nef_run_history.program_version
+      _nef_run_history.script_name
+
+     1   NEFPipelines   0.1.94   nmrstar/import/project.py    
+
+   stop_
+
+save_
+
+save_nef_molecular_system
+   _nef_molecular_system.sf_category   nef_molecular_system
+   _nef_molecular_system.sf_framecode  nef_molecular_system
+
+   loop_
+      _nef_sequence.index
+      _nef_sequence.chain_code
+      _nef_sequence.sequence_code
+      _nef_sequence.residue_name
+      _nef_sequence.linking
+      _nef_sequence.residue_variant
+      _nef_sequence.cis_peptide
+
+     1    A   1    MET   start    .   .    
+     2    A   2    GLN   middle   .   .    
+     3    A   3    TYR   middle   .   .    
+     4    A   4    LYS   middle   .   .    
+     5    A   5    LEU   middle   .   .    
+     6    A   6    VAL   middle   .   .    
+     7    A   7    ILE   middle   .   .    
+     8    A   8    ASN   middle   .   .    
+     9    A   9    GLY   middle   .   .    
+     10   A   10   LYS   middle   .   .    
+     11   A   11   THR   middle   .   .    
+     12   A   12   LEU   middle   .   .    
+     13   A   13   LYS   middle   .   .    
+     14   A   14   GLY   middle   .   .    
+     15   A   15   GLU   middle   .   .    
+     16   A   16   THR   middle   .   .    
+     17   A   17   THR   middle   .   .    
+     18   A   18   THR   middle   .   .    
+     19   A   19   LYS   middle   .   .    
+     20   A   20   ALA   middle   .   .    
+     21   A   21   VAL   middle   .   .    
+     22   A   22   ASP   middle   .   .    
+     23   A   23   ALA   middle   .   .    
+     24   A   24   GLU   middle   .   .    
+     25   A   25   THR   middle   .   .    
+     26   A   26   ALA   middle   .   .    
+     27   A   27   GLU   middle   .   .    
+     28   A   28   LYS   middle   .   .    
+     29   A   29   ALA   middle   .   .    
+     30   A   30   PHE   middle   .   .    
+     31   A   31   LYS   middle   .   .    
+     32   A   32   GLN   middle   .   .    
+     33   A   33   TYR   middle   .   .    
+     34   A   34   ALA   middle   .   .    
+     35   A   35   ASN   middle   .   .    
+     36   A   36   ASP   middle   .   .    
+     37   A   37   ASN   middle   .   .    
+     38   A   38   GLY   middle   .   .    
+     39   A   39   VAL   middle   .   .    
+     40   A   40   ASP   middle   .   .    
+     41   A   41   GLY   middle   .   .    
+     42   A   42   VAL   middle   .   .    
+     43   A   43   TRP   middle   .   .    
+     44   A   44   THR   middle   .   .    
+     45   A   45   TYR   middle   .   .    
+     46   A   46   ASP   middle   .   .    
+     47   A   47   ASP   middle   .   .    
+     48   A   48   ALA   middle   .   .    
+     49   A   49   THR   middle   .   .    
+     50   A   50   LYS   middle   .   .    
+     51   A   51   THR   middle   .   .    
+     52   A   52   PHE   middle   .   .    
+     53   A   53   THR   middle   .   .    
+     54   A   54   VAL   middle   .   .    
+     55   A   55   THR   middle   .   .    
+     56   A   56   GLU   end      .   .    
+
+   stop_
+
+save_
+
+save_nef_chemical_shift_list_bmr25807
+   _nef_chemical_shift_list.sf_category   nef_chemical_shift_list
+   _nef_chemical_shift_list.sf_framecode  nef_chemical_shift_list_bmr25807
+
+   loop_
+      _nef_chemical_shift.chain_code
+      _nef_chemical_shift.sequence_code
+      _nef_chemical_shift.residue_name
+      _nef_chemical_shift.atom_name
+      _nef_chemical_shift.value
+      _nef_chemical_shift.value_uncertainty
+      _nef_chemical_shift.element
+      _nef_chemical_shift.isotope_number
+
+     A   1    MET   C      171.287   0.1    C   13    
+     A   1    MET   CA     54.344    0.1    C   13    
+     A   1    MET   HA     4.171     0.01   H   1     
+     A   1    MET   HBx    2.132     0.01   H   1     
+     A   1    MET   HBy    2.247     0.01   H   1     
+     A   2    GLN   C      174.361   0.1    C   13    
+     A   2    GLN   CA     54.344    0.1    C   13    
+     A   2    GLN   CB     30.6      0.02   C   13    
+     A   2    GLN   H      8.416     0.01   H   1     
+     A   2    GLN   HA     5.087     0.01   H   1     
+     A   2    GLN   HBx    2.046     0.01   H   1     
+     A   2    GLN   HBy    1.931     0.01   H   1     
+     A   2    GLN   N      123.321   0.1    N   15    
+     A   3    TYR   C      174.737   0.1    C   13    
+     A   3    TYR   CA     57.159    0.1    C   13    
+     A   3    TYR   CB     43.59     0.02   C   13    
+     A   3    TYR   H      9.127     0.01   H   1     
+     A   3    TYR   HA     5.403     0.01   H   1     
+     A   3    TYR   HBx    3.464     0.01   H   1     
+     A   3    TYR   HBy    2.771     0.01   H   1     
+     A   3    TYR   N      124.249   0.1    N   15    
+     A   4    LYS   C      172.828   0.1    C   13    
+     A   4    LYS   CA     55.14     0.1    C   13    
+     A   4    LYS   CB     36.18     0.02   C   13    
+     A   4    LYS   H      9.156     0.01   H   1     
+     A   4    LYS   HA     5.242     0.01   H   1     
+     A   4    LYS   HBx    2.063     0.01   H   1     
+     A   4    LYS   HBy    1.916     0.01   H   1     
+     A   4    LYS   N      122.647   0.1    N   15    
+     A   5    LEU   C      174.651   0.1    C   13    
+     A   5    LEU   CA     52.687    0.1    C   13    
+     A   5    LEU   CB     42.52     0.02   C   13    
+     A   5    LEU   H      8.684     0.01   H   1     
+     A   5    LEU   HA     4.997     0.01   H   1     
+     A   5    LEU   HBx    0.799     0.01   H   1     
+     A   5    LEU   HBy    -1.149    0.01   H   1     
+     A   5    LEU   N      126.611   0.1    N   15    
+     A   6    VAL   C      174.423   0.1    C   13    
+     A   6    VAL   CA     61.998    0.1    C   13    
+     A   6    VAL   CB     32.84     0.02   C   13    
+     A   6    VAL   CGx    20.79     0.1    C   13    
+     A   6    VAL   CGy    21.124    0.1    C   13    
+     A   6    VAL   H      9.22      0.01   H   1     
+     A   6    VAL   HA     4.196     0.01   H   1     
+     A   6    VAL   HB     2.104     0.01   H   1     
+     A   6    VAL   HG1%   0.837     0.01   H   1     
+     A   6    VAL   HG2%   0.864     0.01   H   1     
+     A   6    VAL   N      127.197   0.1    N   15    
+     A   7    ILE   C      175.073   0.1    C   13    
+     A   7    ILE   CA     60.522    0.1    C   13    
+     A   7    ILE   CB     39.25     0.02   C   13    
+     A   7    ILE   CG2    18.414    0.1    C   13    
+     A   7    ILE   H      8.831     0.01   H   1     
+     A   7    ILE   HA     4.117     0.01   H   1     
+     A   7    ILE   HB     1.578     0.01   H   1     
+     A   7    ILE   HG2%   0.738     0.01   H   1     
+     A   7    ILE   N      125.591   0.1    N   15    
+     A   8    ASN   C      175.592   0.1    C   13    
+     A   8    ASN   CA     50.718    0.1    C   13    
+     A   8    ASN   CB     37.79     0.02   C   13    
+     A   8    ASN   H      9.039     0.01   H   1     
+     A   8    ASN   HA     5.313     0.01   H   1     
+     A   8    ASN   HBx    2.992     0.01   H   1     
+     A   8    ASN   HBy    2.536     0.01   H   1     
+     A   8    ASN   N      129.173   0.1    N   15    
+     A   9    GLY   C      173.645   0.1    C   13    
+     A   9    GLY   CA     44.398    0.1    C   13    
+     A   9    GLY   H      7.984     0.01   H   1     
+     A   9    GLY   HAx    4.45      0.01   H   1     
+     A   9    GLY   HAy    4.091     0.01   H   1     
+     A   9    GLY   N      110.433   0.1    N   15    
+     A   10   LYS   C      178.974   0.1    C   13    
+     A   10   LYS   CA     58.988    0.1    C   13    
+     A   10   LYS   CB     32.62     0.02   C   13    
+     A   10   LYS   H      9.577     0.01   H   1     
+     A   10   LYS   HA     4.09      0.01   H   1     
+     A   10   LYS   HB%    1.843     0.01   H   1     
+     A   10   LYS   N      120.798   0.1    N   15    
+     A   11   THR   C      173.755   0.1    C   13    
+     A   11   THR   CA     62.026    0.1    C   13    
+     A   11   THR   CB     69.87     0.02   C   13    
+     A   11   THR   CG2    21.605    0.1    C   13    
+     A   11   THR   H      8.836     0.01   H   1     
+     A   11   THR   HA     4.412     0.01   H   1     
+     A   11   THR   HB     4.198     0.01   H   1     
+     A   11   THR   HG2%   1.144     0.01   H   1     
+     A   11   THR   N      108.932   0.1    N   15    
+     A   12   LEU   C      173.437   0.1    C   13    
+     A   12   LEU   CA     54.907    0.1    C   13    
+     A   12   LEU   CB     43.37     0.02   C   13    
+     A   12   LEU   H      7.64      0.01   H   1     
+     A   12   LEU   HA     4.455     0.01   H   1     
+     A   12   LEU   HBx    1.618     0.01   H   1     
+     A   12   LEU   HBy    1.406     0.01   H   1     
+     A   12   LEU   N      125.856   0.1    N   15    
+     A   13   LYS   C      176.452   0.1    C   13    
+     A   13   LYS   CA     53.773    0.1    C   13    
+     A   13   LYS   CB     34.74     0.02   C   13    
+     A   13   LYS   H      8.19      0.01   H   1     
+     A   13   LYS   HA     5.153     0.01   H   1     
+     A   13   LYS   HBx    1.906     0.01   H   1     
+     A   13   LYS   HBy    1.751     0.01   H   1     
+     A   13   LYS   N      123.783   0.1    N   15    
+     A   14   GLY   C      171.192   0.1    C   13    
+     A   14   GLY   CA     45.099    0.1    C   13    
+     A   14   GLY   H      8.375     0.01   H   1     
+     A   14   GLY   HAx    4.153     0.01   H   1     
+     A   14   GLY   HAy    4.259     0.01   H   1     
+     A   14   GLY   N      109.375   0.1    N   15    
+     A   15   GLU   C      175.468   0.1    C   13    
+     A   15   GLU   CA     54.511    0.1    C   13    
+     A   15   GLU   CB     34.0      0.02   C   13    
+     A   15   GLU   H      8.466     0.01   H   1     
+     A   15   GLU   HA     5.639     0.01   H   1     
+     A   15   GLU   HBx    2.058     0.01   H   1     
+     A   15   GLU   HBy    1.939     0.01   H   1     
+     A   15   GLU   N      118.289   0.1    N   15    
+     A   16   THR   C      172.152   0.1    C   13    
+     A   16   THR   CA     60.485    0.1    C   13    
+     A   16   THR   CB     69.52     0.02   C   13    
+     A   16   THR   CG2    19.04     0.1    C   13    
+     A   16   THR   H      8.872     0.01   H   1     
+     A   16   THR   HA     4.751     0.01   H   1     
+     A   16   THR   HB     3.947     0.01   H   1     
+     A   16   THR   HG2%   0.474     0.01   H   1     
+     A   16   THR   N      115.678   0.1    N   15    
+     A   17   THR   C      173.889   0.1    C   13    
+     A   17   THR   CA     59.827    0.1    C   13    
+     A   17   THR   CB     73.33     0.02   C   13    
+     A   17   THR   CG2    21.123    0.1    C   13    
+     A   17   THR   H      8.181     0.01   H   1     
+     A   17   THR   HA     5.82      0.01   H   1     
+     A   17   THR   HB     4.305     0.01   H   1     
+     A   17   THR   HG2%   1.22      0.01   H   1     
+     A   17   THR   N      111.778   0.1    N   15    
+     A   18   THR   C      171.176   0.1    C   13    
+     A   18   THR   CA     61.917    0.1    C   13    
+     A   18   THR   CB     69.99     0.02   C   13    
+     A   18   THR   CG2    19.129    0.1    C   13    
+     A   18   THR   H      8.979     0.01   H   1     
+     A   18   THR   HA     4.671     0.01   H   1     
+     A   18   THR   HB     3.809     0.01   H   1     
+     A   18   THR   HG2%   0.461     0.01   H   1     
+     A   18   THR   N      115.17    0.1    N   15    
+     A   19   LYS   C      175.915   0.1    C   13    
+     A   19   LYS   CA     54.933    0.1    C   13    
+     A   19   LYS   CB     33.69     0.02   C   13    
+     A   19   LYS   H      7.999     0.01   H   1     
+     A   19   LYS   HA     5.359     0.01   H   1     
+     A   19   LYS   HB%    1.759     0.01   H   1     
+     A   19   LYS   N      124.384   0.1    N   15    
+     A   20   ALA   C      177.437   0.1    C   13    
+     A   20   ALA   CA     50.88     0.1    C   13    
+     A   20   ALA   CB     23.79     0.02   C   13    
+     A   20   ALA   H      9.176     0.01   H   1     
+     A   20   ALA   HA     4.817     0.01   H   1     
+     A   20   ALA   HB%    1.37      0.01   H   1     
+     A   20   ALA   N      124.802   0.1    N   15    
+     A   21   VAL   C      174.961   0.1    C   13    
+     A   21   VAL   CA     63.308    0.1    C   13    
+     A   21   VAL   CB     32.04     0.02   C   13    
+     A   21   VAL   CGx    20.776    0.1    C   13    
+     A   21   VAL   CGy    19.857    0.1    C   13    
+     A   21   VAL   H      8.551     0.01   H   1     
+     A   21   VAL   HA     4.136     0.01   H   1     
+     A   21   VAL   HB     2.215     0.01   H   1     
+     A   21   VAL   HG1%   1.01      0.01   H   1     
+     A   21   VAL   HG2%   1.003     0.01   H   1     
+     A   21   VAL   N      115.439   0.1    N   15    
+     A   22   ASP   C      174.798   0.1    C   13    
+     A   22   ASP   CA     52.514    0.1    C   13    
+     A   22   ASP   CB     42.38     0.02   C   13    
+     A   22   ASP   H      7.373     0.01   H   1     
+     A   22   ASP   HA     4.754     0.01   H   1     
+     A   22   ASP   HBx    2.956     0.01   H   1     
+     A   22   ASP   HBy    3.117     0.01   H   1     
+     A   22   ASP   N      115.403   0.1    N   15    
+     A   23   ALA   C      179.383   0.1    C   13    
+     A   23   ALA   CA     54.559    0.1    C   13    
+     A   23   ALA   CB     17.61     0.02   C   13    
+     A   23   ALA   H      8.393     0.01   H   1     
+     A   23   ALA   HA     3.374     0.01   H   1     
+     A   23   ALA   HB%    1.208     0.01   H   1     
+     A   23   ALA   N      121.205   0.1    N   15    
+     A   24   GLU   C      179.303   0.1    C   13    
+     A   24   GLU   CA     66.844    0.1    C   13    
+     A   24   GLU   CB     29.05     0.02   C   13    
+     A   24   GLU   H      8.487     0.01   H   1     
+     A   24   GLU   HA     3.886     0.01   H   1     
+     A   24   GLU   HBx    1.827     0.01   H   1     
+     A   24   GLU   HBy    2.003     0.01   H   1     
+     A   24   GLU   N      119.144   0.1    N   15    
+     A   25   THR   C      177.049   0.1    C   13    
+     A   25   THR   CA     66.844    0.1    C   13    
+     A   25   THR   CB     67.89     0.02   C   13    
+     A   25   THR   CG2    21.194    0.1    C   13    
+     A   25   THR   H      8.409     0.01   H   1     
+     A   25   THR   HA     3.705     0.01   H   1     
+     A   25   THR   HB     4.027     0.01   H   1     
+     A   25   THR   HG2%   1.256     0.01   H   1     
+     A   25   THR   N      117.485   0.1    N   15    
+     A   26   ALA   C      177.059   0.1    C   13    
+     A   26   ALA   CA     54.744    0.1    C   13    
+     A   26   ALA   CB     17.55     0.02   C   13    
+     A   26   ALA   H      7.297     0.01   H   1     
+     A   26   ALA   HA     3.224     0.01   H   1     
+     A   26   ALA   HB%    0.52      0.01   H   1     
+     A   26   ALA   N      125.393   0.1    N   15    
+     A   27   GLU   C      177.724   0.1    C   13    
+     A   27   GLU   CA     59.661    0.1    C   13    
+     A   27   GLU   CB     29.18     0.02   C   13    
+     A   27   GLU   H      8.414     0.01   H   1     
+     A   27   GLU   HA     2.62      0.01   H   1     
+     A   27   GLU   HBx    1.872     0.01   H   1     
+     A   27   GLU   HBy    1.957     0.01   H   1     
+     A   27   GLU   N      117.518   0.1    N   15    
+     A   28   LYS   C      179.602   0.1    C   13    
+     A   28   LYS   CA     59.594    0.1    C   13    
+     A   28   LYS   CB     32.41     0.02   C   13    
+     A   28   LYS   H      7.222     0.01   H   1     
+     A   28   LYS   HA     3.697     0.01   H   1     
+     A   28   LYS   HB%    1.771     0.01   H   1     
+     A   28   LYS   N      116.425   0.1    N   15    
+     A   29   ALA   C      181.665   0.1    C   13    
+     A   29   ALA   CA     54.684    0.1    C   13    
+     A   29   ALA   CB     17.4      0.02   C   13    
+     A   29   ALA   H      7.261     0.01   H   1     
+     A   29   ALA   HA     4.127     0.01   H   1     
+     A   29   ALA   HB%    1.231     0.01   H   1     
+     A   29   ALA   N      122.275   0.1    N   15    
+     A   30   PHE   C      178.365   0.1    C   13    
+     A   30   PHE   CA     56.562    0.1    C   13    
+     A   30   PHE   CB     37.63     0.02   C   13    
+     A   30   PHE   H      8.657     0.01   H   1     
+     A   30   PHE   HA     4.82      0.01   H   1     
+     A   30   PHE   HBx    3.37      0.01   H   1     
+     A   30   PHE   HBy    2.87      0.01   H   1     
+     A   30   PHE   N      119.881   0.1    N   15    
+     A   31   LYS   C      179.503   0.1    C   13    
+     A   31   LYS   CA     59.79     0.1    C   13    
+     A   31   LYS   CB     31.57     0.02   C   13    
+     A   31   LYS   H      9.077     0.01   H   1     
+     A   31   LYS   HA     4.13      0.01   H   1     
+     A   31   LYS   HBx    1.554     0.01   H   1     
+     A   31   LYS   HBy    1.65      0.01   H   1     
+     A   31   LYS   N      122.999   0.1    N   15    
+     A   32   GLN   C      177.105   0.1    C   13    
+     A   32   GLN   CA     58.763    0.1    C   13    
+     A   32   GLN   CB     28.25     0.02   C   13    
+     A   32   GLN   H      7.549     0.01   H   1     
+     A   32   GLN   HA     4.054     0.01   H   1     
+     A   32   GLN   HBx    2.222     0.01   H   1     
+     A   32   GLN   HBy    1.222     0.01   H   1     
+     A   32   GLN   N      119.718   0.1    N   15    
+     A   33   TYR   C      178.984   0.1    C   13    
+     A   33   TYR   CA     61.745    0.1    C   13    
+     A   33   TYR   CB     38.6      0.02   C   13    
+     A   33   TYR   H      8.123     0.01   H   1     
+     A   33   TYR   HA     4.274     0.01   H   1     
+     A   33   TYR   HBx    3.348     0.01   H   1     
+     A   33   TYR   HBy    3.316     0.01   H   1     
+     A   33   TYR   N      120.506   0.1    N   15    
+     A   34   ALA   C      179.404   0.1    C   13    
+     A   34   ALA   CA     56.178    0.1    C   13    
+     A   34   ALA   CB     17.86     0.02   C   13    
+     A   34   ALA   H      9.26      0.01   H   1     
+     A   34   ALA   HA     3.815     0.01   H   1     
+     A   34   ALA   HB%    1.859     0.01   H   1     
+     A   34   ALA   N      122.582   0.1    N   15    
+     A   35   ASN   C      179.354   0.1    C   13    
+     A   35   ASN   CA     56.816    0.1    C   13    
+     A   35   ASN   CB     38.78     0.02   C   13    
+     A   35   ASN   H      8.428     0.01   H   1     
+     A   35   ASN   HA     4.484     0.01   H   1     
+     A   35   ASN   HBx    2.94      0.01   H   1     
+     A   35   ASN   HBy    2.979     0.01   H   1     
+     A   35   ASN   N      118.014   0.1    N   15    
+     A   36   ASP   C      177.099   0.1    C   13    
+     A   36   ASP   CA     56.832    0.1    C   13    
+     A   36   ASP   CB     40.03     0.02   C   13    
+     A   36   ASP   H      8.887     0.01   H   1     
+     A   36   ASP   HA     4.379     0.01   H   1     
+     A   36   ASP   HBx    2.572     0.01   H   1     
+     A   36   ASP   HBy    3.735     0.01   H   1     
+     A   36   ASP   N      121.32    0.1    N   15    
+     A   37   ASN   C      174.019   0.1    C   13    
+     A   37   ASN   CA     53.665    0.1    C   13    
+     A   37   ASN   CB     40.1      0.02   C   13    
+     A   37   ASN   H      7.43      0.01   H   1     
+     A   37   ASN   HA     4.638     0.01   H   1     
+     A   37   ASN   HBx    2.71      0.01   H   1     
+     A   37   ASN   HBy    2.105     0.01   H   1     
+     A   37   ASN   N      115.393   0.1    N   15    
+     A   38   GLY   C      174.206   0.1    C   13    
+     A   38   GLY   CA     46.827    0.1    C   13    
+     A   38   GLY   H      7.839     0.01   H   1     
+     A   38   GLY   HA%    3.943     0.01   H   1     
+     A   38   GLY   N      108.25    0.1    N   15    
+     A   39   VAL   C      174.302   0.1    C   13    
+     A   39   VAL   CA     61.649    0.1    C   13    
+     A   39   VAL   CB     33.39     0.02   C   13    
+     A   39   VAL   CGx    21.325    0.1    C   13    
+     A   39   VAL   CGy    21.466    0.1    C   13    
+     A   39   VAL   H      8.171     0.01   H   1     
+     A   39   VAL   HA     4.17      0.01   H   1     
+     A   39   VAL   HB     1.787     0.01   H   1     
+     A   39   VAL   HG1%   0.687     0.01   H   1     
+     A   39   VAL   HG2%   0.822     0.01   H   1     
+     A   39   VAL   N      120.847   0.1    N   15    
+     A   40   ASP   C      174.362   0.1    C   13    
+     A   40   ASP   CA     52.694    0.1    C   13    
+     A   40   ASP   CB     42.99     0.02   C   13    
+     A   40   ASP   H      8.819     0.01   H   1     
+     A   40   ASP   HA     4.922     0.01   H   1     
+     A   40   ASP   HBx    2.766     0.01   H   1     
+     A   40   ASP   HBy    2.59      0.01   H   1     
+     A   40   ASP   N      128.264   0.1    N   15    
+     A   41   GLY   C      171.985   0.1    C   13    
+     A   41   GLY   CA     45.24     0.1    C   13    
+     A   41   GLY   H      7.974     0.01   H   1     
+     A   41   GLY   HAx    4.376     0.01   H   1     
+     A   41   GLY   HAy    3.559     0.01   H   1     
+     A   41   GLY   N      107.402   0.1    N   15    
+     A   42   VAL   C      176.957   0.1    C   13    
+     A   42   VAL   CA     62.055    0.1    C   13    
+     A   42   VAL   CB     33.57     0.02   C   13    
+     A   42   VAL   CGx    21.256    0.1    C   13    
+     A   42   VAL   CGy    21.294    0.1    C   13    
+     A   42   VAL   H      8.293     0.01   H   1     
+     A   42   VAL   HA     4.398     0.01   H   1     
+     A   42   VAL   HB     1.982     0.01   H   1     
+     A   42   VAL   HG1%   1.01      0.01   H   1     
+     A   42   VAL   HG2%   1.069     0.01   H   1     
+     A   42   VAL   N      120.419   0.1    N   15    
+     A   43   TRP   C      176.99    0.1    C   13    
+     A   43   TRP   CA     57.69     0.1    C   13    
+     A   43   TRP   CB     30.27     0.02   C   13    
+     A   43   TRP   H      9.405     0.01   H   1     
+     A   43   TRP   HA     5.375     0.01   H   1     
+     A   43   TRP   HBx    3.37      0.01   H   1     
+     A   43   TRP   HBy    3.173     0.01   H   1     
+     A   43   TRP   N      131.243   0.1    N   15    
+     A   44   THR   C      172.831   0.1    C   13    
+     A   44   THR   CA     60.18     0.1    C   13    
+     A   44   THR   CB     72.37     0.02   C   13    
+     A   44   THR   CG2    22.182    0.1    C   13    
+     A   44   THR   H      9.455     0.01   H   1     
+     A   44   THR   HA     4.847     0.01   H   1     
+     A   44   THR   HB     4.284     0.01   H   1     
+     A   44   THR   HG2%   1.2       0.01   H   1     
+     A   44   THR   N      114.691   0.1    N   15    
+     A   45   TYR   C      173.254   0.1    C   13    
+     A   45   TYR   CA     56.877    0.1    C   13    
+     A   45   TYR   CB     41.58     0.02   C   13    
+     A   45   TYR   H      8.633     0.01   H   1     
+     A   45   TYR   HA     4.999     0.01   H   1     
+     A   45   TYR   HBx    2.515     0.01   H   1     
+     A   45   TYR   HBy    2.915     0.01   H   1     
+     A   45   TYR   N      120.142   0.1    N   15    
+     A   46   ASP   C      174.506   0.1    C   13    
+     A   46   ASP   CA     51.71     0.1    C   13    
+     A   46   ASP   CB     43.14     0.02   C   13    
+     A   46   ASP   H      7.621     0.01   H   1     
+     A   46   ASP   HA     4.605     0.01   H   1     
+     A   46   ASP   HBx    2.61      0.01   H   1     
+     A   46   ASP   HBy    2.273     0.01   H   1     
+     A   46   ASP   N      128.397   0.1    N   15    
+     A   47   ASP   C      178.168   0.1    C   13    
+     A   47   ASP   CA     56.303    0.1    C   13    
+     A   47   ASP   CB     42.18     0.02   C   13    
+     A   47   ASP   H      8.647     0.01   H   1     
+     A   47   ASP   HA     4.144     0.01   H   1     
+     A   47   ASP   HBx    2.529     0.01   H   1     
+     A   47   ASP   HBy    2.854     0.01   H   1     
+     A   47   ASP   N      125.014   0.1    N   15    
+     A   48   ALA   C      179.956   0.1    C   13    
+     A   48   ALA   CA     51.711    0.1    C   13    
+     A   48   ALA   CB     18.3      0.02   C   13    
+     A   48   ALA   H      8.398     0.01   H   1     
+     A   48   ALA   HA     4.604     0.01   H   1     
+     A   48   ALA   HB%    1.519     0.01   H   1     
+     A   48   ALA   N      119.935   0.1    N   15    
+     A   49   THR   C      175.263   0.1    C   13    
+     A   49   THR   CA     60.337    0.1    C   13    
+     A   49   THR   CB     70.19     0.02   C   13    
+     A   49   THR   CG2    21.016    0.1    C   13    
+     A   49   THR   H      7.051     0.01   H   1     
+     A   49   THR   HA     4.418     0.01   H   1     
+     A   49   THR   HB     4.418     0.01   H   1     
+     A   49   THR   HG2%   1.088     0.01   H   1     
+     A   49   THR   N      103.249   0.1    N   15    
+     A   50   LYS   C      175.087   0.1    C   13    
+     A   50   LYS   CA     56.21     0.1    C   13    
+     A   50   LYS   CB     29.36     0.02   C   13    
+     A   50   LYS   H      7.91      0.01   H   1     
+     A   50   LYS   HA     4.227     0.01   H   1     
+     A   50   LYS   HBx    2.063     0.01   H   1     
+     A   50   LYS   HBy    2.127     0.01   H   1     
+     A   50   LYS   N      123.183   0.1    N   15    
+     A   51   THR   C      175.017   0.1    C   13    
+     A   51   THR   CA     62.136    0.1    C   13    
+     A   51   THR   CB     72.11     0.02   C   13    
+     A   51   THR   CG2    20.883    0.1    C   13    
+     A   51   THR   H      7.452     0.01   H   1     
+     A   51   THR   HA     5.52      0.01   H   1     
+     A   51   THR   HB     3.775     0.01   H   1     
+     A   51   THR   HG2%   0.996     0.01   H   1     
+     A   51   THR   N      111.246   0.1    N   15    
+     A   52   PHE   C      174.387   0.1    C   13    
+     A   52   PHE   CA     57.281    0.1    C   13    
+     A   52   PHE   CB     42.64     0.02   C   13    
+     A   52   PHE   H      10.443    0.01   H   1     
+     A   52   PHE   HA     5.662     0.01   H   1     
+     A   52   PHE   HBx    3.235     0.01   H   1     
+     A   52   PHE   HBy    3.287     0.01   H   1     
+     A   52   PHE   N      131.348   0.1    N   15    
+     A   53   THR   C      172.484   0.1    C   13    
+     A   53   THR   CA     61.31     0.1    C   13    
+     A   53   THR   CB     70.99     0.02   C   13    
+     A   53   THR   CG2    20.381    0.1    C   13    
+     A   53   THR   H      9.222     0.01   H   1     
+     A   53   THR   HA     5.302     0.01   H   1     
+     A   53   THR   HB     3.822     0.01   H   1     
+     A   53   THR   HG2%   0.959     0.01   H   1     
+     A   53   THR   N      117.688   0.1    N   15    
+     A   54   VAL   C      173.096   0.1    C   13    
+     A   54   VAL   CA     57.823    0.1    C   13    
+     A   54   VAL   CB     32.45     0.02   C   13    
+     A   54   VAL   CGx    20.092    0.1    C   13    
+     A   54   VAL   CGy    20.812    0.1    C   13    
+     A   54   VAL   H      8.309     0.01   H   1     
+     A   54   VAL   HA     4.485     0.01   H   1     
+     A   54   VAL   HB     -0.354    0.01   H   1     
+     A   54   VAL   HG1%   0.392     0.01   H   1     
+     A   54   VAL   HG2%   -0.302    0.01   H   1     
+     A   54   VAL   N      123.201   0.1    N   15    
+     A   55   THR   C      174.262   0.1    C   13    
+     A   55   THR   CA     61.263    0.1    C   13    
+     A   55   THR   CB     70.81     0.02   C   13    
+     A   55   THR   CG2    21.088    0.1    C   13    
+     A   55   THR   H      8.394     0.01   H   1     
+     A   55   THR   HA     4.722     0.01   H   1     
+     A   55   THR   HB     3.809     0.01   H   1     
+     A   55   THR   HG2%   1.259     0.01   H   1     
+     A   55   THR   N      124.206   0.1    N   15    
+     A   56   GLU   CA     58.149    0.1    C   13    
+     A   56   GLU   CB     32.04     0.02   C   13    
+     A   56   GLU   H      7.944     0.01   H   1     
+     A   56   GLU   HA     4.318     0.01   H   1     
+     A   56   GLU   HBx    2.183     0.01   H   1     
+     A   56   GLU   HBy    1.975     0.01   H   1     
+     A   56   GLU   N      133.769   0.1    N   15    
+
+   stop_
+
+save_
+

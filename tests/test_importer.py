@@ -1,7 +1,7 @@
 from pathlib import Path
 import pandas as pd
 import pytest
-from numpy import NaN
+from numpy import nan
 from pandas.testing import assert_frame_equal
 from pynmrstar import Entry
 
@@ -21,9 +21,9 @@ def test_import_aa_type_info_file():
         'C': [176.44282, 177.76473, 175.89544, 173.0364],
         'CA': [62.82192, 52.38738, 55.48441, 62.02754],
         'CB': [32.26901, 19.14546, 32.90399, 69.45566],
-        'H': [NaN, 8.54894, 8.37917, 7.88704],
+        'H': [nan, 8.54894, 8.37917, 7.88704],
         'HA': [4.43775, 4.27742, 4.41167, 3.88160],
-        'N': [NaN, 124.63832, 119.82062, 115.46265],
+        'N': [nan, 124.63832, 119.82062, 115.46265],
         'SS_class': ['ACDEFGHIKLMNPQRSTVWY', 'AVI', 'AVI', 'ACDEFGHIKLMNPQRSTVWY'],
         'SS_class_m1': ['ACDEFGHIKLMNPQRSTVWY', 'ACDEFGHIKLMNPQRSTVWY', 'ACDEFGHIKLMNPQRSTVWY', 'ACDEFGHIKLMNPQRSTVWY']
     }
@@ -43,9 +43,9 @@ def test_import_aa_type_info_out():
         'C': [176.44282, 177.76473, 175.89544, 173.0364],
         'CA': [62.82192, 52.38738, 55.48441, 62.02754],
         'CB': [32.26901, 19.14546, 32.90399, 69.45566],
-        'H': [NaN, 8.54894, 8.37917, 7.88704],
+        'H': [nan, 8.54894, 8.37917, 7.88704],
         'HA': [4.43775, 4.27742, 4.41167, 3.88160],
-        'N': [NaN, 124.63832, 119.82062, 115.46265],
+        'N': [nan, 124.63832, 119.82062, 115.46265],
         'SS_class': ['ACDEFGHIKLMNPQRSTVWY', 'CDEFGHKLMNPQRSTWY', 'CDEFGHKLMNPQRSTWY', 'ACDEFGHIKLMNPQRSTVWY'],
         'SS_class_m1': ['ACDEFGHIKLMNPQRSTVWY', 'ACDEFGHIKLMNPQRSTVWY', 'ACDEFGHIKLMNPQRSTVWY', 'ACDEFGHIKLMNPQRSTVWY']
     }
@@ -139,9 +139,9 @@ EXPECTED_IN_DATA = {
         'C': [176.44282, 177.76473, 175.89544, 173.0364],
         'CA': [62.82192, 52.38738, 55.48441, 62.02754],
         'CB': [32.26901, 19.14546, 32.90399, 69.45566],
-        'H': [NaN, 8.54894, 8.37917, 7.88704],
+        'H': [nan, 8.54894, 8.37917, 7.88704],
         'HA': [4.43775, 4.27742, 4.41167, 3.88160],
-        'N': [NaN, 124.63832, 119.82062, 115.46265],
+        'N': [nan, 124.63832, 119.82062, 115.46265],
         'SS_class': ['ACDEFGHIKLMNPQRSTVWY', 'AVI', 'AVI', 'ACDEFGHIKLMNPQRSTVWY'],
         'SS_class_m1': ['ACDEFGHIKLMNPQRSTVWY', 'ACDEFGHIKLMNPQRSTVWY', 'ACDEFGHIKLMNPQRSTVWY', 'ACDEFGHIKLMNPQRSTVWY']
     }

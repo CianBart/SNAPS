@@ -46,7 +46,7 @@ def remove_random_obs(a, fraction, remove="SS", seed=None):
             tmp = a.obs.index[~a.obs[atom].isna()]
             to_remove = int(fraction*len(tmp))
             selection = list(rand.choice(tmp,to_remove, replace=False))
-            a.obs.loc[selection,atom] = np.NaN
+            a.obs.loc[selection,atom] = np.nan
 
 def test_removed_obs(output_dir, id_list, fraction_remove, remove, seed=None, atom_set=None):
     # Create output directory if it doesn't already exist
