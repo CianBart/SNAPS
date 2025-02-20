@@ -86,7 +86,7 @@ def test_import_rdc_data():
 
 
 
-@pytest.mark.skip('unknown errors')
+#@pytest.mark.skip('unknown errors')
 def test_SNAPS_log_probability():
 
     assigner = SNAPS_assigner()
